@@ -5,6 +5,8 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Register from "../views/Register.vue";
 import store from "../store/index";
+import Collection from "@/views/Collection.vue";
+import CreateCollection from "@/views/CreateCollection.vue";
 
 Vue.use(Router);
 
@@ -57,6 +59,16 @@ const router = new Router({
       path: "*",
       redirect: "/",
     },
+    {
+      path: "/collection",
+      name: "Collection",
+      component: Collection
+    },
+    {
+      path: "/create-collection",
+      name: "CreateCollection",
+      component: CreateCollection
+    }
   ],
 });
 
