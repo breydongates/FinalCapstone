@@ -2,7 +2,7 @@ USE master
 GO
 
 --drop database if it exists
-IF DB_ID('comic_book_collection_assistant') IS NOT NULL
+IF DB_ID('final_capstone') IS NOT NULL
 BEGIN
 	ALTER DATABASE final_capstone SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 	DROP DATABASE final_capstone;
@@ -49,10 +49,11 @@ creator_name varchar (200)
 
 CREATE TABLE comic_character (
 comic_id int NOT NULL,
-character_name varchar (200)
+character_id int NOT NULL
 )
 
 CREATE TABLE characters (
+character_id int IDENTITY (1,1) NOT NULL, 
 character_name varchar (200) NOT NULL
 )
 
