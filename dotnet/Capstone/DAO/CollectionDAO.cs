@@ -17,6 +17,10 @@ namespace Capstone.DAO
 
         private string SQLGetUserCollectionColumns = "SELECT * FROM users_collection WHERE collection_id = @collection_id;";
 
+        private string SQLGetAllPublicCollections = "SELECT * FROM users_collection WHERE is_private = 0;";
+
+        private string SQLGetAllCollectionsByUserId = "SELECT * FROM users_collection WHERE user_id = @user_id;";
+
         public CollectionDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
@@ -59,6 +63,66 @@ namespace Capstone.DAO
             }
 
             return collection;
+        }
+
+        public List<Collection> GetAllPublicCollections()
+        {
+            List<Collection> result = new List<Collection>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(SQLGetAllPublicCollections, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Collection individualCollection = new Collection();
+
+                    individualCollection.CollectionId = Convert.ToInt32(reader["collection_id"]);
+                    individualCollection.UserId = Convert.ToInt32(reader["user_id"]);
+                    individualCollection.CollectionName = Convert.ToString(reader["collection_name"]);
+                    individualCollection.IsPrivate = Convert.ToBoolean(reader["is_private"]);
+
+                    result.Add(individualCollection);
+                }
+
+            }
+
+            return result;
+        }
+
+        public List<Collection> GetCollectionsByUserId(int userId)
+        {
+            List<Collection> result = new List<Collection>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(SQLGetAllCollectionsByUserId, conn);
+                cmd.Parameters.AddWithValue("@user_id", userId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Collection individualCollection = new Collection();
+
+                    individualCollection.CollectionId = Convert.ToInt32(reader["collection_id"]);
+                    individualCollection.UserId = Convert.ToInt32(reader["user_id"]);
+                    individualCollection.CollectionName = Convert.ToString(reader["collection_name"]);
+                    individualCollection.IsPrivate = Convert.ToBoolean(reader["is_private"]);
+
+                    result.Add(individualCollection);
+                }
+
+            }
+
+            return result;
+
         }
 
     }

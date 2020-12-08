@@ -10,6 +10,9 @@ namespace Capstone.DAO
     {
         Collection AddCollection(Collection newCollection);
 
+        List<Collection> GetAllPublicCollections();
+
+        List<Collection> GetCollectionsByUserId(int userId);
 
 
     }
