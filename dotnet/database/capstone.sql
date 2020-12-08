@@ -26,13 +26,14 @@ CREATE TABLE users (
 
 CREATE TABLE users_collection (
 	collection_id int IDENTITY(1,1) NOT NULL, 
-	user_id int NOT NULL
+	user_id int NOT NULL,
+	collection_name nvarchar(160) NOT NULL,
+	is_private bit NOT NULL DEFAULT 0,
 	CONSTRAINT PK_users_collection PRIMARY KEY (collection_id)
 )
 
 CREATE TABLE collections(
 	collection_id int NOT NULL,
-	is_private bit NOT NULL DEFAULT 0,
 	user_id int NOT NULL,
 	comic_id int NOT NULL
 	CONSTRAINT PK_collections PRIMARY KEY (collection_id, user_id, comic_id),
