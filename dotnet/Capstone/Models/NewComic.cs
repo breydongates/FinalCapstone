@@ -11,7 +11,7 @@ namespace Capstone.Models
         {
             this.Title = title;
             this.Publisher = publisher;
-            this. CreatorId = creatorId;
+            this.CreatorId = creatorId;
             this.Description = description;
         }
         private  string Title { get; set; } 
