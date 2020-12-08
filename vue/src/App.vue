@@ -38,12 +38,11 @@ export default {
 <!-- Application-Wide Styles go here. 
      Any valid CSS or SCSS is allowable here. See https://sass-lang.com/documentation/style-rules for info on SCSS -->
 <style lang="scss">
-* {
+html {
   color: red;
-  background-image:radial-gradient(circle, yellow, orange);
+  background-color:#fff;
 };
-div {
-  background-image:radial-gradient(circle, lightblue, deepskyblue);
-}
+
+
 
 </style>

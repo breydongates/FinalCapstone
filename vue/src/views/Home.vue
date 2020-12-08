@@ -4,7 +4,9 @@
     <p>Project NAME</p> <!-- CHANGE ME -->
     <router-link :to="{name: 'CreateCollection'}"> Create Collection </router-link>
     <router-link :to="{name: 'Collection'}"> View Collection </router-link>
-    <p> Add Comic </p>
+    <router-link :to="{name: 'AddComic'}"> Add Comic </router-link>
+    <router-link :to="{name: 'Comic'}"> View Comics </router-link> 
+    
   </div>
 </template>
 

@@ -8,6 +8,7 @@ import store from "../store/index";
 import Collection from "@/views/Collection.vue";
 import CreateCollection from "@/views/CreateCollection.vue";
 import AddComic from "@/views/AddComic.vue";
+import Comic from "@/views/Comic.vue";
 
 Vue.use(Router);
 
@@ -83,7 +84,13 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
-    }
+    },
+    {
+      path: "/comics",
+      name: "Comics",
+      component: Comic,
+    },
+    
     
   ],
 });
