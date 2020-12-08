@@ -1,9 +1,7 @@
 <template>
   <div> 
+      <h1> Add a comic </h1>
       <add-comic />
-      <h1>
-          Add a comic v
-      </h1>
   </div>
 </template>
 

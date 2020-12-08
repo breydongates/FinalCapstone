@@ -53,13 +53,23 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
+    SET_COLLECTION(state, data){
+      state.collections = data;
+    },
+
     CREATE_COLLECTION(state, payload){
       payload.name = '';
       payload.isPrivate = false ;
       state.collections.push(payload);
-
     },
-    
+    SET_COMIC(state, data) {
+      state.comic = data;
+    },
+
+    ADD_COMIC(state, payload){
+      state.comic.push(payload);
+    },
+
 
   }
 })
