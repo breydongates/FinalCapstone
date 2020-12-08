@@ -40,6 +40,10 @@ export default {
 <style lang="scss">
 * {
   color: red;
-  //background-image:url(../assets/background.jpg);
+  background-image:radial-gradient(circle, yellow, orange);
+};
+div {
+  background-image:radial-gradient(circle, lightblue, deepskyblue);
 }
+
 </style>
