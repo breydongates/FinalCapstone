@@ -15,6 +15,7 @@ namespace Capstone.Controllers
     public class CollectionController : ControllerBase
     {
         private readonly ICollectionDAO collectionDAO;
+        
 
         public CollectionController(ICollectionDAO dao)
         {
@@ -23,8 +24,9 @@ namespace Capstone.Controllers
 
         [HttpPost]
         public ActionResult<Collection> CreateCollection(Collection newCollection)
-        {   
-            return Created(collectionDAO.AddCollection(newCollection)); 
+        {
+            Collection collection = collectionDAO.AddCollection(newCollection);
+            return Created("/collection", collection); 
         }
     }
 }
