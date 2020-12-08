@@ -24,11 +24,16 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {}, // If a user is an admin, their user.role will be 'admin'
-
-      collection: {
-        name: '',
-        publicOrPrivate: ''
-      },
+      collections: [
+        {
+          name: "Test1",
+          publicOrPrivate: "public",
+        },
+        {
+          name: "Test2",
+          publicOrPrivate: "private"
+        }
+      ],
 
   },
   mutations: {
@@ -49,9 +54,12 @@ export default new Vuex.Store({
       axios.defaults.headers.common = {};
     },
     CREATE_COLLECTION(state, payload){
-      state.collection.name = payload.name;
-      state.collection.publicOrPrivate = payload.publicOrPrivate;
+      payload.name = '';
+      payload.publicOrPrivate ='public' ;
+      state.collections.push(payload);
+
     },
+    
 
   }
 })

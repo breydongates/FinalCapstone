@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const http = axios.create({
-    baseURL: "http://localhost:8083/"
-});
 
 export default {
+
+    viewAllCollections(){
+        return axios.get('/collections');
+    },    
     createCollection(newCollection) {
-        return http.post('/collections', newCollection);
+        return axios.post('/collections', newCollection);
     },
 }

@@ -28,7 +28,7 @@ const router = new Router({
       name: "home",
       component: Home,
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
       },
     },
     {
@@ -60,14 +60,20 @@ const router = new Router({
       redirect: "/",
     },
     {
-      path: "/collection",
+      path: "/collections",
       name: "Collection",
-      component: Collection
+      component: Collection,
+      meta: {
+        requiresAuth: false,
+      },
     },
     {
       path: "/create-collection",
       name: "CreateCollection",
-      component: CreateCollection
+      component: CreateCollection,
+      meta: {
+        requiresAuth: true,
+      },
     }
   ],
 });
