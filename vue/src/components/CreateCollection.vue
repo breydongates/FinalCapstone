@@ -1,14 +1,15 @@
 <template>
-  <form >
+  <form v-on:submit.prevent="saveCollection()">
       <div>
           <label for="collectionName"> Collection Name </label>
-          <input type="text" id="collectionName" name="CollectionName" v-model="collection.name">
-          <input type="radio" id="public" name="publicOrPrivate" value="public" v-model="collection.publicOrPrivate">
-          <label for="public"> Public </label> <br>
-          <input type="radio" id="private" name="publicOrPrivate" value="private" v-model="collection.publicOrPrivate">
+          <input type="text" id="collectionName" name="CollectionName" v-model="collection.name"> <br>
+          <input type="radio" id="public" name="isPrivate" value="false" v-model="collection.isPrivate">
+          <label for="public"> Public   </label> 
+          <input type="radio" id="private" name="isPrivate" value="true" v-model="collection.isPrivate">
           <label for="private"> Private </label> <br>
+          
         <div class="actions">
-        <button type="submit" v-on:click="saveCollection()">Save Collection </button>
+        <button type="submit">Save Collection </button>
         </div>
       </div>
 
@@ -24,24 +25,36 @@ data(){
     return {
         collection: {
             name: "",
-            publicOrPrivate: "",
+            isPrivate: false,
         },
     }
 },
 methods: {
+    
     saveCollection(){
-        collectionService.createCollection(this.collection)
+        const newCollection = {
+            name: this.collection.name,
+            isPrivate: this.collection.isPrivate,
+        };
+        collectionService.createCollection(newCollection)
         .then(response => {
             if(response.status === 201){
-                this.$store.commit('CREATE_COLLECTION');
-                
+                this.$store.commit('CREATE_COLLECTION', response.data);
+            if(this.$router.currentRoute !== "CreateCollection"){
+                this.$router.push({ name: "CreateCollection"});
             }
-        })
+            }
+        });
     }
-}
+},
 }
 </script>
 
 <style>
-
+#public{
+    padding: 1rem;
+}
+#private{
+    padding: 1rem;
+}
 </style>

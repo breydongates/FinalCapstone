@@ -7,6 +7,7 @@ import Register from "../views/Register.vue";
 import store from "../store/index";
 import Collection from "@/views/Collection.vue";
 import CreateCollection from "@/views/CreateCollection.vue";
+import AddComic from "@/views/AddComic.vue";
 
 Vue.use(Router);
 
@@ -28,7 +29,7 @@ const router = new Router({
       name: "home",
       component: Home,
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
       },
     },
     {
@@ -60,15 +61,30 @@ const router = new Router({
       redirect: "/",
     },
     {
-      path: "/collection",
+      path: "/collections",
       name: "Collection",
-      component: Collection
+      component: Collection,
+      meta: {
+        requiresAuth: false,
+      },
     },
     {
       path: "/create-collection",
       name: "CreateCollection",
-      component: CreateCollection
+      component: CreateCollection,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/add-comic",
+      name: "AddComic",
+      component: AddComic,
+      meta: {
+        requiresAuth: true,
+      },
     }
+    
   ],
 });
 
