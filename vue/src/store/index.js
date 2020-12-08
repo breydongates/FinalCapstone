@@ -27,11 +27,11 @@ export default new Vuex.Store({
       collections: [
         {
           name: "Test1",
-          publicOrPrivate: "public",
+          isPrivate: false,
         },
         {
           name: "Test2",
-          publicOrPrivate: "private"
+          isPrivate: true,
         }
       ],
 
@@ -55,7 +55,7 @@ export default new Vuex.Store({
     },
     CREATE_COLLECTION(state, payload){
       payload.name = '';
-      payload.publicOrPrivate ='public' ;
+      payload.isPrivate = false ;
       state.collections.push(payload);
 
     },

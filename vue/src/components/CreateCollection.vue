@@ -3,9 +3,9 @@
       <div>
           <label for="collectionName"> Collection Name </label>
           <input type="text" id="collectionName" name="CollectionName" v-model="collection.name"> <br>
-          <input type="radio" id="public" name="publicOrPrivate" value="public" v-model="collection.publicOrPrivate">
+          <input type="radio" id="public" name="isPrivate" value="false" v-model="collection.isPrivate">
           <label for="public"> Public   </label> 
-          <input type="radio" id="private" name="publicOrPrivate" value="private" v-model="collection.publicOrPrivate">
+          <input type="radio" id="private" name="isPrivate" value="true" v-model="collection.isPrivate">
           <label for="private"> Private </label> <br>
           
         <div class="actions">
@@ -25,7 +25,7 @@ data(){
     return {
         collection: {
             name: "",
-            publicOrPrivate: "public",
+            isPrivate: false,
         },
     }
 },
@@ -34,7 +34,7 @@ methods: {
     saveCollection(){
         const newCollection = {
             name: this.collection.name,
-            publicOrPrivate: this.collection.publicOrPrivate,
+            isPrivate: this.collection.isPrivate,
         };
         collectionService.createCollection(newCollection)
         .then(response => {

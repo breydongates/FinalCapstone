@@ -7,6 +7,7 @@ import Register from "../views/Register.vue";
 import store from "../store/index";
 import Collection from "@/views/Collection.vue";
 import CreateCollection from "@/views/CreateCollection.vue";
+import AddComic from "@/views/AddComic.vue";
 
 Vue.use(Router);
 
@@ -74,7 +75,16 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
+    },
+    {
+      path: "/add-comic",
+      name: "AddComic",
+      component: AddComic,
+      meta: {
+        requiresAuth: true,
+      },
     }
+    
   ],
 });
 
