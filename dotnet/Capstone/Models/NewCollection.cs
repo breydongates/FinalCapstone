@@ -17,9 +17,8 @@ namespace Capstone.Models
 
         }
 
-        private int UserId { get; set; }
-        private string CollectionName { get; set; }
-
-        private bool IsPrivate { get; set; }
+        public int UserId { get; set; }
+        public string CollectionName { get; set; }
+        public bool IsPrivate { get; set; }
     }
 }
