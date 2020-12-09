@@ -11,7 +11,7 @@ namespace Capstone.DAO
     {
         private readonly string connectionString;
 
-        private string SQLAddCollection = "INSERT INTO users_collection (username, collection_name, is_private) VALUES (@username, @collection_name, @is_private);";
+        private string SQLAddCollection = "INSERT INTO users_collection (user_id, collection_name, is_private) VALUES (@user_id, @collection_name, @is_private);";
 
         private string SQLGetRecentlyCreatedIdentity = "SELECT @@IDENTITY;";
 
@@ -19,14 +19,14 @@ namespace Capstone.DAO
 
         private string SQLGetAllPublicCollections = "SELECT * FROM users_collection WHERE is_private = 0;";
 
-        private string SQLGetAllCollectionsByUsername = "SELECT * FROM users_collection WHERE username = @username;";
+        private string SQLGetAllCollectionsByUserId = "SELECT * FROM users_collection WHERE user_id = @user_id;";
 
         public CollectionDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
         }
 
-        public Collection AddCollection(Collection newCollection)
+        public Collection AddCollection(Collection newCollection, int userId)
         {
             Collection collection = new Collection();
 
@@ -37,7 +37,7 @@ namespace Capstone.DAO
                 //Adding collection to users_collection table
                 SqlCommand cmd = new SqlCommand(SQLAddCollection, conn);
 
-                cmd.Parameters.AddWithValue("@username", newCollection.Username);
+                cmd.Parameters.AddWithValue("@user_id", userId);
                 cmd.Parameters.AddWithValue("@collection_name", newCollection.CollectionName);
                 cmd.Parameters.AddWithValue("@is_private", newCollection.IsPrivate);
 
@@ -56,7 +56,7 @@ namespace Capstone.DAO
                 while (reader.Read())
                 {
                     collection.CollectionName = Convert.ToString(reader["collection_name"]);
-                    collection.Username = Convert.ToString(reader["username"]);
+                    collection.UserId = Convert.ToInt32(reader["user_id"]);
                     collection.IsPrivate = Convert.ToBoolean(reader["is_private"]);
                 }
 
@@ -82,7 +82,7 @@ namespace Capstone.DAO
                     Collection individualCollection = new Collection();
 
                     individualCollection.CollectionId = Convert.ToInt32(reader["collection_id"]);
-                    individualCollection.Username = Convert.ToString(reader["username"]);
+                    individualCollection.UserId = Convert.ToInt32(reader["user_id"]);
                     individualCollection.CollectionName = Convert.ToString(reader["collection_name"]);
                     individualCollection.IsPrivate = Convert.ToBoolean(reader["is_private"]);
 
@@ -94,7 +94,7 @@ namespace Capstone.DAO
             return result;
         }
 
-        public List<Collection> GetCollectionsByUsername(string username)
+        public List<Collection> GetCollectionsByUserId(int userId)
         {
             List<Collection> result = new List<Collection>();
 
@@ -102,8 +102,8 @@ namespace Capstone.DAO
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand(SQLGetAllCollectionsByUsername, conn);
-                cmd.Parameters.AddWithValue("@username", username);
+                SqlCommand cmd = new SqlCommand(SQLGetAllCollectionsByUserId, conn);
+                cmd.Parameters.AddWithValue("@user_id", userId);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -112,7 +112,7 @@ namespace Capstone.DAO
                     Collection individualCollection = new Collection();
 
                     individualCollection.CollectionId = Convert.ToInt32(reader["collection_id"]);
-                    individualCollection.Username = Convert.ToString(reader["username"]);
+                    individualCollection.UserId = Convert.ToInt32(reader["user_id"]);
                     individualCollection.CollectionName = Convert.ToString(reader["collection_name"]);
                     individualCollection.IsPrivate = Convert.ToBoolean(reader["is_private"]);
 

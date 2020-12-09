@@ -2,7 +2,7 @@
 {
     public class Collection
     {
-        public string Username { get; set; }
+        public int UserId { get; set; }
 
         public int CollectionId { get; set; } 
 

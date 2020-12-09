@@ -60,7 +60,6 @@ export default new Vuex.Store({
     CREATE_COLLECTION(state, payload){
       payload.CollectionName = '';
       payload.IsPrivate = false ;
-      payload.Username;
       state.collections.push(payload);
     },
     SET_COMIC(state, data) {

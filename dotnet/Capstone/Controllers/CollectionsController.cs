@@ -25,7 +25,9 @@ namespace Capstone.Controllers
         [HttpPost]
         public ActionResult<Collection> CreateCollection(Collection newCollection)
         {
-            Collection collection = collectionDAO.AddCollection(newCollection);
+            //this.User.Identity.Name
+            int userId = int.Parse(this.User.FindFirst("sub").Value);
+            Collection collection = collectionDAO.AddCollection(newCollection, userId);
             return Created("/collections", collection); 
         }
 
@@ -38,9 +40,9 @@ namespace Capstone.Controllers
         }
 
         [HttpGet("/{userId}")]
-        public ActionResult<List<Collection>> GetAllCollectionsByUserId(string username)
+        public ActionResult<List<Collection>> GetAllCollectionsByUserId(int userId)
         {
-            ActionResult<List<Collection>> result = collectionDAO.GetCollectionsByUsername(username);
+            ActionResult<List<Collection>> result = collectionDAO.GetCollectionsByUserId(userId);
 
             return Ok(result);
         }

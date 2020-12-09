@@ -8,11 +8,11 @@ namespace Capstone.DAO
 {
     public interface ICollectionDAO
     {
-        Collection AddCollection(Collection newCollection);
+        Collection AddCollection(Collection newCollection, int userId);
 
         List<Collection> GetAllPublicCollections();
 
-        List<Collection> GetCollectionsByUsername(string username);
+        List<Collection> GetCollectionsByUserId(int userId);
 
 
     }

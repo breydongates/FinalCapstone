@@ -43,7 +43,7 @@ export default {
       collection: {
         CollectionName: "",
         IsPrivate: false,
-        Username: "",
+        //Username: "",
       },
     };
   },
@@ -52,7 +52,7 @@ export default {
       const newCollection = {
         CollectionName: this.collection.CollectionName,
         IsPrivate: this.collection.IsPrivate,
-        Username: this.collection.Username,
+        //Username: this.$store.state.user.username,
       };
       collectionService.createCollection(newCollection).then((response) => {
         if (response.status === 201) {
