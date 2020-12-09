@@ -57,8 +57,9 @@ export default {
       collectionService.createCollection(newCollection).then((response) => {
         if (response.status === 201) {
           this.$store.commit("CREATE_COLLECTION", response.data);
-          if (this.$router.currentRoute !== "CreateCollection") {
-            this.$router.push({ name: "CreateCollection" });
+          if (this.$router.currentRoute !== "home") {
+            this.$router.push({ name: "home" });
+
 
             // Want to navigate to view collections and clear form 
           }

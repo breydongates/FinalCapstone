@@ -34,6 +34,24 @@
           required />
       </div>
       <div class="form-group">
+        <label for="userRole">Standard</label>
+        <input
+        type="radio"
+        id="Standard"
+        class="form-control"
+        value="Standard"
+        v-model="user.role"
+        required />
+        <label for="userRole">Premium</label>
+        <input
+        type="radio"
+        id="Premium"
+        class="form-control"
+        value="Premium"
+        v-model="user.role"
+        required />
+      </div>
+      <div class="form-group">
         <router-link :to="{ name: 'login' }">Have an account?</router-link>
       </div>
       <button class="btn btn-primary" type="submit">
@@ -54,7 +72,7 @@ export default {
         username: '',
         password: '',
         confirmPassword: '',
-        role: 'user',
+        role: 'Standard',
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',

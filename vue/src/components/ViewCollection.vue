@@ -8,7 +8,8 @@
 </template>
 
 <script>
-//import collectionService from "../services/CollectionService";
+import collectionService from "@/services/CollectionService.js";
+
 export default {
 name: "CollectionList",
 methods: {
