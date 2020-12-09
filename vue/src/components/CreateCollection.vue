@@ -6,7 +6,7 @@
         type="text"
         id="collectionName"
         name="CollectionName"
-        v-model="collection.name"
+        v-model="collection.CollectionName"
       />
       <br />
       <input
@@ -14,7 +14,7 @@
         id="public"
         name="isPrivate"
         value="false"
-        v-model="collection.isPrivate"
+        v-model="collection.IsPrivate"
       />
       <label for="public"> Public </label>
       <input
@@ -22,7 +22,7 @@
         id="private"
         name="isPrivate"
         value="true"
-        v-model="collection.isPrivate"
+        v-model="collection.IsPrivate"
       />
       <label for="private"> Private </label> <br />
 
@@ -41,22 +41,26 @@ export default {
   data() {
     return {
       collection: {
-        name: "",
-        isPrivate: false,
+        CollectionName: "",
+        IsPrivate: false,
+        Username: "",
       },
     };
   },
   methods: {
     saveCollection() {
       const newCollection = {
-        name: this.collection.name,
-        isPrivate: this.collection.isPrivate,
+        CollectionName: this.collection.CollectionName,
+        IsPrivate: this.collection.IsPrivate,
+        Username: this.collection.Username,
       };
       collectionService.createCollection(newCollection).then((response) => {
         if (response.status === 201) {
           this.$store.commit("CREATE_COLLECTION", response.data);
           if (this.$router.currentRoute !== "CreateCollection") {
             this.$router.push({ name: "CreateCollection" });
+
+            // Want to navigate to view collections and clear form 
           }
         }
       });
