@@ -3,7 +3,7 @@
     <h1>Home</h1>
     <p>Project NAME</p> <!-- CHANGE ME -->
     <router-link :to="{name: 'CreateCollection'}"> Create Collection </router-link>
-    <router-link :to="{name: 'Collection'}" v-on:click="viewAllCollectionsByUser()"> View Collection </router-link>
+    <router-link :to="{name: 'Collection'}" > View Your Collections </router-link>
     <router-link :to="{name: 'AddComic'}"> Add Comic </router-link>
     <router-link :to="{name: 'Comic'}"> View Comics </router-link> 
     

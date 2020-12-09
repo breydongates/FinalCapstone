@@ -39,7 +39,7 @@ namespace Capstone.Controllers
             return Ok(result);
         }
 
-        [HttpGet("/user")]
+        [HttpGet("user")]
         public ActionResult<List<Collection>> GetAllCollectionsByUserId()
         {
             int userId = int.Parse(this.User.FindFirst("sub").Value);
