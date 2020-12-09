@@ -38,7 +38,7 @@ namespace Capstone.Controllers
         }
 
         [HttpGet("/{userId}")]
-        public ActionResult<List<Collection>> GetAllCollectionsByUserId(int username)
+        public ActionResult<List<Collection>> GetAllCollectionsByUserId(string username)
         {
             ActionResult<List<Collection>> result = collectionDAO.GetCollectionsByUsername(username);
 

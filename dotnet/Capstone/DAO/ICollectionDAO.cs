@@ -12,7 +12,7 @@ namespace Capstone.DAO
 
         List<Collection> GetAllPublicCollections();
 
-        List<Collection> GetCollectionsByUsername(int userId);
+        List<Collection> GetCollectionsByUsername(string username);
 
 
     }

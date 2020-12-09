@@ -94,7 +94,7 @@ namespace Capstone.DAO
             return result;
         }
 
-        public List<Collection> GetCollectionsByUserId(string username)
+        public List<Collection> GetCollectionsByUsername(string username)
         {
             List<Collection> result = new List<Collection>();
 
