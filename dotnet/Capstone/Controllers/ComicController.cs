@@ -21,6 +21,15 @@ namespace Capstone.Controllers
             comicsDAO = dao;
         }
 
+        [HttpGet("{collectionId}")]
+        public ActionResult ViewComicsByCollection (int collectionId)
+        {
+            List<Comic> result = comicsDAO.GetComicsByCollectionId(collectionId);
+
+            return Ok(result);
+
+        }
+
         [HttpPost]
         public ActionResult AddComicToCollection (Comic comic)
         {
@@ -28,9 +37,6 @@ namespace Capstone.Controllers
             Comic result = comicsDAO.AddComicToCollection(comic, comic.CollectionId, userId);
 
             return Created("/comics", result);
-
-
-           
         } 
     }
 }
