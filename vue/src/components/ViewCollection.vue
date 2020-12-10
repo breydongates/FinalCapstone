@@ -5,8 +5,8 @@
               
           </p>
         <ul>  
-            <li v-for="Collection in Collections" :key="Collection.CollectionId"> 
-                {{Collection.CollectionName}}
+            <li v-for="Collection in Collections" :key="Collection.collectionId"> 
+                {{Collection.collectionName}}
             </li>
 
 
