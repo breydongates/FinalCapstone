@@ -12,7 +12,8 @@ namespace Capstone.DAO
     {
         private readonly string connectionString;
 
-        //private string SQLAddComicToCollection= ""
+
+        private string SQLAddComicToCollection = "";
 
         public ComicDAO(string dbConnectionString)
         {
@@ -20,15 +21,21 @@ namespace Capstone.DAO
 
         }
 
-        //public Collection AddComicToCollection (Comic comic, Collection collection)
-        //{
-        //    using(SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        conn.Open();
+        public Collection AddComicToCollection (Comic comic, Collection collection) {
 
-        //        SqlCommand cmd = new SqlCommand(SQLAddComicToCollection, conn) 
-        //    }
-        //}
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+             SqlCommand cmd = new SqlCommand(SQLAddComicToCollection, conn); 
+            } 
+            
+
+             Collection collectionResult = new Collection();
+
+             return collectionResult;
+
+        }
 
 
     }
