@@ -80,7 +80,8 @@ namespace Capstone
             services.AddSingleton<IPasswordHasher>(ph => new PasswordHasher());
             services.AddTransient<IUserDAO>(m => new UserSqlDAO(connectionString));
             services.AddTransient<ICollectionDAO>(c => new CollectionDAO(connectionString));
-            services.AddTransient<IComicDAO>(x => new ComicDAO(connectionString));
+            services.AddTransient<IComicsDAO>(x => new ComicsDAO(connectionString));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
