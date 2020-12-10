@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Capstone.Models
 {
-    public class NewComic
+    public class Comic
     {
-        public NewComic (string title, string publisher, int creatorId, string description)
+        public Comic (string title, string publisher, int creatorId, string description)
         {
             this.Title = title;
             this.Publisher = publisher;
