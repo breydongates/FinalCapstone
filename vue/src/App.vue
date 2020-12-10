@@ -2,7 +2,8 @@
      Note that you have classes from bootstrap available to you.
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
-  <div id="app" class="container"> <!-- If you start to get random styling you don't like, remove container from this div -->
+<body>
+  <div id="app"> <!-- If you start to get random styling you don't like, remove container from this div -->
     <div id="nav">
       <router-link class="nav-item" v-bind:to="{ name: 'home' }">
         <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
@@ -27,6 +28,8 @@
     </div>
     <router-view />
   </div>
+  
+</body>
 </template>
 
 <script>
@@ -40,7 +43,37 @@ export default {
 <style lang="scss">
 html {
   color: red;
-  background-color:#fff;
+  background-image: url(assets/updatedBackground.jpg);
+  background-size: cover;
+  font-family: 'Comic Sans', cursive;
+  
+};
+
+
+#nav {
+   background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+  left:-6px;
+  position:absolute;
+  top:-2px;
+  transform:skew(-15deg);
+};
+
+.home {
+   background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+   bottom:-2px;
+  position:absolute;
+  right:-6px;
+  transform:skew(-15deg);
+};
+ body > #app {
+  background-image:radial-gradient(circle, lightcoral, tomato);
+  border: solid 4px black;
 };
 
 
