@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit.prevent="addComic()">
+  <form v-on:submit.prevent="saveComic()">
     <h1>Add Comic</h1>
     <div>
       <label for="title"> Title </label>
@@ -10,6 +10,7 @@
       v-model="comic.title"
        />
       <label for="description"> Description </label>
+      <br />
       <input
         type="text"
         id="description"
