@@ -80,43 +80,28 @@ html {
   transform:skew(-15deg);
 };
  #app {
-  background-color:#fff;
-  border:solid 2px #000;
-  border-radius:12px;
-  display:inline-block;
-  margin:.5em;
-  padding:.5em 1em;
+  background: url(assets/squigglybubble.svg);
+  font-family: SequentialistBB, cursive;
+  font-size: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   position:absolute;
-  top: 10rem;
-  left: 10rem;
-  bottom: 10rem;
-  right: 10rem;
-  
+  top: 15rem;
+  left: 15rem;
+  bottom: 5rem;
+  right: 5rem;
+  text-align: center;
+  font-size: 2.4vw;
+  font-style: italic;
+  padding: 4% 6% 12% 0%;
 };
-#app:before {
-  border:solid 12px transparent;
-  border-left:solid 12px #000;
-  border-top:solid 12px #000;
-  bottom:-24px;
-  content:"";
-  height:0;
-  left:24px;
-  position:absolute;
-  transform:skew(-15deg);
-  width:0;
-};
-#app:after {
-  border:solid 10px transparent;
-  border-left:solid 10px #fff;
-  border-top:solid 10px #fff;
-  bottom:-19px;
-  content:"";
-  height:0;
-  left:27px;
-  position:absolute;
-  transform:skew(-15deg);
-  width:0;
-};
+#app.span {
+  display:block;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
 li {
    list-style: none;
 };

@@ -67,6 +67,9 @@ export default {
       });
     },
   },
+  props: {
+    
+  }
 };
 </script>
 

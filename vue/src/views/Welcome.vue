@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <p>Hello World</p>
+      WELCOME,
+      <span>to the Comic Book Database!</span>
   </div>
 </template>
 
