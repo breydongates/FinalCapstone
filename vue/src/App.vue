@@ -75,6 +75,19 @@ html {
   background-image:radial-gradient(circle, lightcoral, tomato);
   border: solid 4px black;
 };
+li {
+   list-style: none;
+};
+li::before{
+   content: '';
+   display: inline-block;
+   height: 1em;
+   width: 1em;
+background-image: url(assets/Boom.png);
+background-size: contain;
+background-repeat: no-repeat;
+border-radius: 50%;
+};
 
 
 
