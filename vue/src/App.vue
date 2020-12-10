@@ -58,7 +58,7 @@ html {
 };
 
 
-#app > #nav {
+#nav {
    background-color:#fff;
   border:solid 2px #000;
   margin:0;
@@ -79,17 +79,43 @@ html {
   right:-6px;
   transform:skew(-15deg);
 };
- body > #app {
-  background-image:radial-gradient(circle, lightcoral, tomato);
-  border: solid 4px black;
-  position: absolute;
-  left: 0.5rem;
-  top: 0.5rem;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
+ #app {
+  background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:.5em;
+  padding:.5em 1em;
+  position:absolute;
+  top: 10rem;
+  left: 10rem;
+  bottom: 10rem;
+  right: 10rem;
   
+};
+#app:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+};
+#app:after {
+  border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
 };
 li {
    list-style: none;
@@ -106,7 +132,8 @@ border-radius: 50%;
 };
 h1 {
     text-align: center;
-}
+};
+
 
 
 

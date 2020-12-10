@@ -55,6 +55,7 @@ export default {
         description: this.comic.description,
         publisher: this.comic.publisher,
         creator: this.comic.creator,
+        collectionId: this.comic.collectionId,
       };
       comicService.addComic(newComic).then((response) => {
         if (response.status === 201) {

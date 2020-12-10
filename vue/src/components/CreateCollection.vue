@@ -67,7 +67,7 @@ export default {
             this.$router.push({ name: "home" });
 
 
-            // Want to navigate to view collections and clear form 
+             
           }
         }
       });
