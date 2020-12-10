@@ -22,11 +22,10 @@ namespace Capstone.Controllers
         }
 
         [HttpPost]
-
-        public ActionResult<Comic> AddComicToCollection (Comic comic, int collectionId)
+        public ActionResult AddComicToCollection (Comic comic)
         {
             int userId = int.Parse(this.User.FindFirst("sub").Value);
-            ActionResult<Comic> result = comicsDAO.AddComicToCollection(comic, collectionId, userId);
+            Comic result = comicsDAO.AddComicToCollection(comic, comic.CollectionId, userId);
 
             return Created("/comics", result);
 
