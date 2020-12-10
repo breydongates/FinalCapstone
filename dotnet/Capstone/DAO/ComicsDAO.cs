@@ -24,7 +24,7 @@ namespace Capstone.DAO
         }
 
 
-        public void AddComicToCollection (Comic comic, int collectionId, int userId)
+        public Comic AddComicToCollection (Comic comic, int collectionId, int userId)
         {
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -50,6 +50,7 @@ namespace Capstone.DAO
 
             }
 
+            return comic;
 
              
 
