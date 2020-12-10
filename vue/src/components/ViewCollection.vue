@@ -1,9 +1,7 @@
 <template>
   <div class="collection">
       <h2> 
-          <p v-on:click="viewAllCollectionsByUser">Click Here For Collections 
-              
-          </p>
+        
         <ul>  
             <li v-for="Collection in Collections" :key="Collection.collectionId"> 
                 {{Collection.collectionName}}
@@ -52,8 +50,6 @@ viewAllCollectionsByUser() {
 </script>
 
 <style>
-ul {
-list-style-type: "\1F44D";
-}
+
 
 </style>

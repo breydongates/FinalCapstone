@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1> Your Collection </h1>
+      <h1 class="yourCollections"> Your Collections </h1>
       <view-collection />
   </div>
 </template>
@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style>
+.yourCollections {
+    text-align: center;
+}
 
 </style>

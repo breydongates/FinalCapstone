@@ -18,7 +18,10 @@ export default {
   methods: {
     viewAllCollectionsByUser(){
       collectionService.viewAllCollectionsByUser();
+
     },
   }
+  
+  
 };
 </script>
