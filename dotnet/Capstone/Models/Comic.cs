@@ -16,6 +16,7 @@ namespace Capstone.Models
 
         public string Description { get; set; }
 
+        public int CollectionId { get; set; }
         
     }
 }

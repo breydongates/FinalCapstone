@@ -1,9 +1,11 @@
 ﻿using Capstone.DAO;
+using Capstone.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 
 namespace Capstone.Controllers
@@ -19,8 +21,16 @@ namespace Capstone.Controllers
             comicsDAO = dao;
         }
 
-        //[HttpPost]
+        [HttpPost]
+        public ActionResult AddComicToCollection (Comic comic)
+        {
+            int userId = int.Parse(this.User.FindFirst("sub").Value);
+            Comic result = comicsDAO.AddComicToCollection(comic, comic.CollectionId, userId);
 
-        //public 
+            return Created("/comics", result);
+
+
+           
+        } 
     }
 }
