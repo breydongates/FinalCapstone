@@ -3,7 +3,7 @@
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
 <body>
-  <div id="app"> <!-- If you start to get random styling you don't like, remove container from this div -->
+  <div> <!-- If you start to get random styling you don't like, remove container from this div -->
     <div id="nav">
       <router-link class="nav-item" v-bind:to="{ name: 'home' }">
         <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
@@ -27,13 +27,21 @@
       </router-link>
     </div>
     <router-view />
+    <div>
+      <home />
+    </div>
   </div>
   
 </body>
 </template>
 
 <script>
+import Home from '@/components/Home.vue';
+
 export default {
+  components: {
+    Home
+  },
   
 }
 </script>
@@ -50,7 +58,7 @@ html {
 };
 
 
-#nav {
+#app > #nav {
    background-color:#fff;
   border:solid 2px #000;
   margin:0;
@@ -74,6 +82,14 @@ html {
  body > #app {
   background-image:radial-gradient(circle, lightcoral, tomato);
   border: solid 4px black;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  
 };
 li {
    list-style: none;
@@ -88,6 +104,9 @@ background-size: contain;
 background-repeat: no-repeat;
 border-radius: 50%;
 };
+h1 {
+    text-align: center;
+}
 
 
 

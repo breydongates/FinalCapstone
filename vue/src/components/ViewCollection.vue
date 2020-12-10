@@ -1,7 +1,7 @@
 <template>
   <div class="collection">
       <h2> 
-        
+
         <ul>  
             <li v-for="Collection in Collections" :key="Collection.collectionId"> 
                 {{Collection.collectionName}}
@@ -40,10 +40,12 @@ viewAllCollectionsByUser() {
 
 
 },
-/*created() {
+created() {
 
-    this.Collections = collectionService.viewAllCollectionsByUser().response.data;
-}, */
+    collectionService.viewAllCollectionsByUser().then( (response) =>{
+        this.Collections =response.data;
+    });
+}, 
 }
 
 
