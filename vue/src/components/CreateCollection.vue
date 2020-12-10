@@ -13,7 +13,7 @@
         type="radio"
         id="public"
         name="isPrivate"
-        value="false"
+        value= 0
         v-model="collection.IsPrivate"
       />
       <label for="public"> Public </label>
@@ -21,7 +21,7 @@
         type="radio"
         id="private"
         name="isPrivate"
-        value="true"
+        value= 1
         v-model="collection.IsPrivate"
       />
       <label for="private"> Private </label> <br />
@@ -42,8 +42,7 @@ export default {
     return {
       collection: {
         CollectionName: "",
-        IsPrivate: false,
-        //Username: "",
+        IsPrivate: 0,
       },
     };
   },
@@ -52,8 +51,15 @@ export default {
       const newCollection = {
         CollectionName: this.collection.CollectionName,
         IsPrivate: this.collection.IsPrivate,
-        //Username: this.$store.state.user.username,
       };
+
+      if (newCollection.IsPrivate == 0) {
+        newCollection.IsPrivate = false;
+      }
+      else {
+        newCollection.IsPrivate = true;
+      }
+      
       collectionService.createCollection(newCollection).then((response) => {
         if (response.status === 201) {
           this.$store.commit("CREATE_COLLECTION", response.data);
