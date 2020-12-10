@@ -12,14 +12,11 @@ namespace Capstone.DAO
     {
         private readonly string connectionString;
 
-<<<<<<< HEAD
+
         private string SQLAddComicToCollection = "INSERT INTO comics (title, comic_desc, publisher) VALUES (@title, @comic_desc, @publisher);";
 
 
-=======
 
-        private string SQLAddComicToCollection = "";
->>>>>>> 4f0a7fe7f46397c46ca310ee05bd4efd3afbf351
 
         public ComicDAO(string dbConnectionString)
         {
@@ -27,7 +24,7 @@ namespace Capstone.DAO
 
         }
 
-<<<<<<< HEAD
+
         public Collection AddComicToCollection (Comic comic, int collectionId)
         {
             using(SqlConnection conn = new SqlConnection(connectionString))
@@ -43,19 +40,7 @@ namespace Capstone.DAO
 
 
             }
-=======
-        public Collection AddComicToCollection (Comic comic, Collection collection) {
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-
-             SqlCommand cmd = new SqlCommand(SQLAddComicToCollection, conn); 
-            } 
-            
-
-             Collection collectionResult = new Collection();
->>>>>>> 4f0a7fe7f46397c46ca310ee05bd4efd3afbf351
 
              return collectionResult;
 

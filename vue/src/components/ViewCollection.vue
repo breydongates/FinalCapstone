@@ -52,5 +52,8 @@ viewAllCollectionsByUser() {
 </script>
 
 <style>
+ul {
+list-style-type: "\1F44D";
+}
 
 </style>
