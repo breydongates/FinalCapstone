@@ -12,7 +12,9 @@ namespace Capstone.DAO
     {
         private readonly string connectionString;
 
-        private string SQLAddComicToCollection = "";
+        private string SQLAddComicToCollection = "INSERT INTO comics (title, comic_desc, publisher) VALUES (@title, @comic_desc, @publisher);";
+
+
 
         public ComicDAO(string dbConnectionString)
         {
@@ -20,13 +22,20 @@ namespace Capstone.DAO
 
         }
 
-        public Collection AddComicToCollection (Comic comic, Collection collection)
+        public Collection AddComicToCollection (Comic comic, int collectionId)
         {
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand(SQLAddComicToCollection, conn); 
+                SqlCommand cmd = new SqlCommand(SQLAddComicToCollection, conn);
+                cmd.Parameters.AddWithValue("@title", comic.Title);
+                cmd.Parameters.AddWithValue("@comic_desc", comic.Description);
+                cmd.Parameters.AddWithValue("@publisher", comic.Publisher);
+
+                cmd.ExecuteNonQuery();
+
+
             }
 
             Collection collectionResult = new Collection();
