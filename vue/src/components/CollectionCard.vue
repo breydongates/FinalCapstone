@@ -1,6 +1,6 @@
 <template>
-  <div class="card" v-bind:class="{collection: collections.name}"> 
-      <div class="button-container" >
+  <div class="collectioncard" v-bind:class="{collection: collections.name}"> 
+      <button class="add-comic" v-on:click="addComic"></button>
 
       </div>
   </div>
@@ -8,6 +8,15 @@
 
 <script>
 export default {
+  name: "collection-card",
+  props: {
+    collection: Object,
+  },
+  methods: {
+    addComic(){
+      this.$store.commit('ADD_COMIC', this.collection)
+    }
+  }
 
 }
 </script>

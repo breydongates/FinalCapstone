@@ -118,6 +118,15 @@ border-radius: 50%;
 h1 {
     text-align: center;
 };
+.collectioncard {
+  background-color: lightcoral;
+  font-family: SequentialistBB, cursive;
+  border: 2px solid lavender;
+  border-radius: 10px;
+  width: 250px;
+  height: 550 px;
+  margin: 20 px;
+}
 
 
 
