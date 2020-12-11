@@ -28,7 +28,7 @@ namespace Capstone.Controllers
             int userId = int.Parse(this.User.FindFirst("sub").Value);
             ActionResult<Comic> result = comicsDAO.AddComicToCollection(comic, collectionId, userId);
 
-            return Created("/comics", result);
+            return Created("/Comics", result);
 
 
            

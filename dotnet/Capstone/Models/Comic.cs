@@ -12,7 +12,7 @@ namespace Capstone.Models
 
         public string Publisher { get; set; }
 
-        public int ComicId { get; set; } 
+        public int ComicId { get; set; } = 0;
 
         public string Description { get; set; }
 
