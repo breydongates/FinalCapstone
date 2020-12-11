@@ -6,7 +6,7 @@ export default {
     addComic(newComic) {
         return axios.post('/Comics', newComic);
     },
-    viewAllComics() {
+    viewAllComicsByCollectionId() {
         return axios.get('/Comics');
     },
 }

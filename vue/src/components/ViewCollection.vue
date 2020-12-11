@@ -11,13 +11,11 @@
 </template>
 
 <script>
-import CollectionCard from "@/components/CollectionCard.vue";
 import collectionService from "@/services/CollectionService.js";
 
 export default {
 name: "CollectionList",
 components: {
-    CollectionCard,
 },
 
 data() {
@@ -38,14 +36,7 @@ viewAllCollectionsByUser() {
     
     })
 }
-
-
 },
-
-addComicToCollection(collectionId) {
-
-},
-
 created() {
 
     collectionService.viewAllCollectionsByUser().then( (response) =>{

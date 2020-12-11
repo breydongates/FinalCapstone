@@ -9,6 +9,7 @@ import Collection from "@/views/Collection.vue";
 import CreateCollection from "@/views/CreateCollection.vue";
 import AddComic from "@/views/AddComic.vue";
 import Comic from "@/views/Comic.vue";
+import PublicCollections from "@/views/PublicCollections.vue";
 
 Vue.use(Router);
 
@@ -90,6 +91,14 @@ const router = new Router({
       name: "Comics",
       component: Comic,
     },
+    {
+      path: "/public-collections",
+      name: "PublicCollections",
+      component: PublicCollections,
+      meta: {
+        requiresAuth: false,
+      },
+    }
     
     
   ],

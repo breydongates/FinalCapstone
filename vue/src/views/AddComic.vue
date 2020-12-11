@@ -1,6 +1,6 @@
 <template>
   <div> 
-     <create-comic v-bind:collectionId="this.collectionId"/>
+     <create-comic v-bind:collectionId="collectionId"/>
   </div>
 </template>
 

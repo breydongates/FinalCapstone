@@ -44,7 +44,7 @@ export default {
         description: "",
         publisher: "",
         creator: "",
-        collectionId: this.collectionId,
+        collectionId: this.$props.collectionId,
       },
     };
   },
@@ -59,10 +59,10 @@ export default {
       };
       comicService.addComic(newComic).then((response) => {
         if (response.status === 201) {
-          this.$store.commit("ADD_COMIC", response.data);
-          if (this.$router.currentRoute !== "welcome") {
-            this.$router.push({ name: "welcome" });
-          }
+          this.comic.title = "";
+          this.comic.description = "";
+          this.comic.publisher = "";
+          this.comic.creator = "";
         }
       });
     },
