@@ -15,8 +15,5 @@ export default {
         return axios.post('/collections', newCollection);
     },
     
-    viewComicsByCollection() {
-        return axios.get('/collections/comics');
-    },
-
+   
 }
