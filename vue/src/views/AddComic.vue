@@ -1,7 +1,6 @@
 <template>
   <div> 
-      <h1> Add a comic </h1>
-     <create-comic />
+     <create-comic v-bind:collectionId="this.collectionId"/>
   </div>
 </template>
 
@@ -12,9 +11,16 @@ export default {
     name: "add-comic",
     components: {
        CreateComic,
-    }
-
-
+    },
+    created () {
+      this.collectionId = this.$route.params.collectionId;
+      console.debug(this.collectionId);
+    },
+    data () {
+      return {
+        collectionId: 0,
+      }
+    } 
 }
 </script>
 

@@ -44,7 +44,7 @@ export default {
         description: "",
         publisher: "",
         creator: "",
-        collectionId: "",
+        collectionId: this.collectionId,
       },
     };
   },
@@ -68,8 +68,8 @@ export default {
     },
   },
   props: {
-    
-  }
+    collectionId: Number,
+  },
 };
 </script>
 

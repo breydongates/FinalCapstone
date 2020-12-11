@@ -78,7 +78,7 @@ const router = new Router({
       },
     },
     {
-      path: "/add-comic",
+      path: "/add-comic/:collectionId",
       name: "AddComic",
       component: AddComic,
       meta: {
