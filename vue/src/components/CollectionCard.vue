@@ -2,7 +2,7 @@
   <div class="collectioncard" v-bind:class="{collection: collections.name}"> 
       <button class="add-comic" v-on:click="addComic"></button>
 
-      </div>
+    
   </div>
 </template>
 
