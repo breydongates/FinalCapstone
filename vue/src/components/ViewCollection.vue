@@ -1,15 +1,11 @@
 <template>
   <div class="collection">
       <h2> 
-        
         <ul>  
             <li v-for="Collection in Collections" :key="Collection.collectionId"> 
-                {{Collection.collectionName}}
+                <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}">{{Collection.collectionId}} {{Collection.collectionName}}</router-link> 
             </li>
-
-
         </ul>
-
       </h2>
   </div>
 </template>
@@ -19,6 +15,9 @@ import collectionService from "@/services/CollectionService.js";
 
 export default {
 name: "CollectionList",
+components: {
+},
+
 data() {
     return {
         Collections:[], 
@@ -37,13 +36,13 @@ viewAllCollectionsByUser() {
     
     })
 }
-
-
 },
-/*created() {
+created() {
 
-    this.Collections = collectionService.viewAllCollectionsByUser().response.data;
-}, */
+    collectionService.viewAllCollectionsByUser().then( (response) =>{
+        this.Collections = response.data;
+    });
+}, 
 }
 
 

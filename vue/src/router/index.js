@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "../views/Home.vue";
+import Welcome from "../views/Welcome.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Register from "../views/Register.vue";
@@ -9,6 +9,7 @@ import Collection from "@/views/Collection.vue";
 import CreateCollection from "@/views/CreateCollection.vue";
 import AddComic from "@/views/AddComic.vue";
 import Comic from "@/views/Comic.vue";
+import PublicCollections from "@/views/PublicCollections.vue";
 
 Vue.use(Router);
 
@@ -28,7 +29,7 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: Home,
+      component: Welcome,
       meta: {
         requiresAuth: false,
       },
@@ -78,7 +79,7 @@ const router = new Router({
       },
     },
     {
-      path: "/add-comic",
+      path: "/add-comic/:collectionId",
       name: "AddComic",
       component: AddComic,
       meta: {
@@ -86,10 +87,18 @@ const router = new Router({
       },
     },
     {
-      path: "/comics",
+      path: "/Comics",
       name: "Comics",
       component: Comic,
     },
+    {
+      path: "/public-collections",
+      name: "PublicCollections",
+      component: PublicCollections,
+      meta: {
+        requiresAuth: false,
+      },
+    }
     
     
   ],

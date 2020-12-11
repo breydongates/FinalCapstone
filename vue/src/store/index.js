@@ -28,6 +28,7 @@ export default new Vuex.Store({
         {
           name: "Test1",
           isPrivate: false,
+          
         },
         {
           name: "Test2",

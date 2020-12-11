@@ -9,8 +9,8 @@
       name="Title" 
       v-model="comic.title"
        />
+       <br />
       <label for="description"> Description </label>
-      <br />
       <input
         type="text"
         id="description"
@@ -36,6 +36,7 @@
 <script>
 import comicService from "../services/ComicService";
 export default {
+  name: "CreateComic",
   data() {
     return {
       comic: {
@@ -43,6 +44,7 @@ export default {
         description: "",
         publisher: "",
         creator: "",
+        collectionId: this.$props.collectionId,
       },
     };
   },
@@ -53,16 +55,20 @@ export default {
         description: this.comic.description,
         publisher: this.comic.publisher,
         creator: this.comic.creator,
+        collectionId: this.comic.collectionId,
       };
       comicService.addComic(newComic).then((response) => {
         if (response.status === 201) {
-          this.$store.commit("ADD_COMIC", response.data);
-          if (this.$router.currentRoute !== "AddComic") {
-            this.$router.push({ name: "AddComic" });
-          }
+          this.comic.title = "";
+          this.comic.description = "";
+          this.comic.publisher = "";
+          this.comic.creator = "";
         }
       });
     },
+  },
+  props: {
+    collectionId: Number,
   },
 };
 </script>

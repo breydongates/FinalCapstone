@@ -8,7 +8,9 @@ namespace Capstone.DAO
 {
     public interface IComicsDAO
     {
-       Comic AddComicToCollection(Comic comic, int collectionId, int userId);
+        Comic AddComicToCollection(Comic comic, int collectionId, int userId);
+
+        List<Comic> GetComicsByCollectionId(int collectionId);
 
     }
 }

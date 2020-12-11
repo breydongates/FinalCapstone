@@ -21,17 +21,27 @@ namespace Capstone.Controllers
             comicsDAO = dao;
         }
 
-        [HttpPost]
+        [HttpGet("{collectionId}")]
+        public ActionResult ViewComicsByCollection (int collectionId)
+        {
+            List<Comic> result = comicsDAO.GetComicsByCollectionId(collectionId);
 
-        public ActionResult<Comic> AddComicToCollection (Comic comic, int collectionId)
+            return Ok(result);
+
+        }
+
+        [HttpPost]
+        public ActionResult AddComicToCollection (Comic comic)
         {
             int userId = int.Parse(this.User.FindFirst("sub").Value);
-            ActionResult<Comic> result = comicsDAO.AddComicToCollection(comic, collectionId, userId);
+            Comic result = comicsDAO.AddComicToCollection(comic, comic.CollectionId, userId);
+
 
             return Created("/Comics", result);
 
 
            
+
         } 
     }
 }

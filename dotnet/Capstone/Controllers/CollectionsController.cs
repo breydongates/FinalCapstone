@@ -34,7 +34,7 @@ namespace Capstone.Controllers
         [HttpGet]
         public ActionResult<List<Collection>> GetAllPublicCollections()
         {
-            ActionResult<List<Collection>> result = collectionDAO.GetAllPublicCollections();
+            List<Collection> result = collectionDAO.GetAllPublicCollections();
 
             return Ok(result);
         }

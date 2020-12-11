@@ -3,7 +3,7 @@
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
 <body>
-  <div id="app"> <!-- If you start to get random styling you don't like, remove container from this div -->
+  <div> <!-- If you start to get random styling you don't like, remove container from this div -->
     <div id="nav">
       <router-link class="nav-item" v-bind:to="{ name: 'home' }">
         <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
@@ -27,13 +27,21 @@
       </router-link>
     </div>
     <router-view />
+    <div>
+      <home />
+    </div>
   </div>
   
 </body>
 </template>
 
 <script>
+import Home from '@/components/Home.vue';
+
 export default {
+  components: {
+    Home
+  },
   
 }
 </script>
@@ -71,10 +79,29 @@ html {
   right:-6px;
   transform:skew(-15deg);
 };
- body > #app {
-  background-image:radial-gradient(circle, lightcoral, tomato);
-  border: solid 4px black;
+ #app {
+  background: url(assets/squigglybubble.svg);
+  font-family: SequentialistBB, cursive;
+  font-size: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position:absolute;
+  top: 15rem;
+  left: 15rem;
+  bottom: 5rem;
+  right: 5rem;
+  text-align: center;
+  font-size: 2.4vw;
+  font-style: italic;
+  padding: 4% 6% 12% 0%;
 };
+#app.span {
+  display:block;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
 li {
    list-style: none;
 };
@@ -88,6 +115,19 @@ background-size: contain;
 background-repeat: no-repeat;
 border-radius: 50%;
 };
+h1 {
+    text-align: center;
+};
+.collectioncard {
+  background-color: lightcoral;
+  font-family: SequentialistBB, cursive;
+  border: 2px solid lavender;
+  border-radius: 10px;
+  width: 250px;
+  height: 550 px;
+  margin: 20 px;
+}
+
 
 
 

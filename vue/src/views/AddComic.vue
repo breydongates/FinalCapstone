@@ -1,20 +1,26 @@
 <template>
   <div> 
-      <h1> Add a comic </h1>
-      <add-comic />
+     <create-comic v-bind:collectionId="collectionId"/>
   </div>
 </template>
 
 <script>
-import AddComic from "@/components/AddComic.vue";
+import CreateComic from "@/components/CreateComic.vue";
 
 export default {
     name: "add-comic",
     components: {
-        AddComic,
-    }
-
-
+       CreateComic,
+    },
+    created () {
+      this.collectionId = this.$route.params.collectionId;
+      console.debug(this.collectionId);
+    },
+    data () {
+      return {
+        collectionId: 0,
+      }
+    } 
 }
 </script>
 
