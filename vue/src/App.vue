@@ -118,7 +118,7 @@ border-radius: 50%;
 h1 {
     text-align: center;
 };
-.collectioncard {
+.comicCard {
   background-color: lightcoral;
   font-family: SequentialistBB, cursive;
   border: 2px solid lavender;
@@ -126,7 +126,67 @@ h1 {
   width: 250px;
   height: 550 px;
   margin: 20 px;
-}
+};
+
+#comicView{
+  border-radius: 12px;
+  background-image: radial-gradient(circle, lightcoral, tomato);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position:absolute;
+  top: 15rem;
+  left: 15rem;
+  bottom: 5rem;
+  right: 5rem;
+  text-align: center;
+  border: 4px solid white;
+  color: black;
+};
+#comicView > h1{
+    background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+  left:-6px;
+  position:absolute;
+  top:-2px;
+  transform:skew(-15deg);
+}; 
+#comicView > ul {
+   background-color:#fff;
+  border:solid 2px #000;
+  box-shadow:0 6px 6px -6px #000;
+  display:inline-block;
+  flex:1 1;
+  height:200px;
+  margin:1vmin;
+  overflow:hidden;
+  position:relative;
+};
+#comicView:nth-child(1){
+  flex-basis: 200px;
+};
+#comicView:nth-child(2){
+  flex-basis: 200px;
+};
+#comicView:nth-child(3){
+  flex-basis: 200px;
+};
+#comicView:nth-child(4){
+  flex-basis: 200px;
+};
+
+#addComicButton{
+    background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+   bottom:-2px;
+  position:absolute;
+  right:-5px;
+  transform:skew(-15deg);
+};
 
 
 
