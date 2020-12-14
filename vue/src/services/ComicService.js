@@ -9,5 +9,14 @@ export default {
     viewComicsByCollection(collectionId) {
         return axios.get(`/Comics/${collectionId}`);
     },
+    viewComicsByCharacter(collectionId) {
+        return axios.post(`/statsRequest/character/${collectionId}`);
+    },
+    viewComicsByPublisher(collectionId) {
+        return axios.post(`/statsRequest/publisher/${collectionId}`);
+    }, 
+    viewAllPublicComics(){
+        return axios.get('/Comics');
+    }
 
 }

@@ -26,6 +26,10 @@
       />
       <label for="creator"> Creator </label>
       <input type="text" id="creator" name="Creator" v-model="comic.creator" />
+      <!--Add input for characters, require at least 1 character entry-->
+
+      <label for="mainCharacter"> Main Character </label>
+      <input type="text" id="mainCharacter" name = "mainCharacter" v-model="comic.mainCharacter" />
       <div class="actions">
         <button type="submit">Save Comic</button>
       </div>
@@ -46,6 +50,7 @@ export default {
         description: "",
         publisher: "",
         creator: "",
+        mainCharacter: "",
         collectionId: this.$props.collectionId,
       },
     };
@@ -57,6 +62,7 @@ export default {
         description: this.comic.description,
         publisher: this.comic.publisher,
         creator: this.comic.creator,
+        mainCharacter: this.comic.mainCharacter,
         collectionId: this.comic.collectionId,
       };
       comicService.addComic(newComic, this.user)
@@ -67,6 +73,7 @@ export default {
           this.comic.description = "";
           this.comic.publisher = "";
           this.comic.creator = "";
+          this.comic.mainCharacter = "",
           this.$store.commit("ADD_COMIC", response.data);
         }}
         else {

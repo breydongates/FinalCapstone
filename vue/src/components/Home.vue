@@ -9,7 +9,7 @@
       View Your Collections
     </router-link>
     <router-link :to="{ name: 'AddComic' }"> Add Comic </router-link>
-    <router-link :to="{ name: 'Comic' }"> View Comics </router-link>
+    <router-link :to="{ name: 'Comics' }"> View Comics </router-link>
   </div>
 </template>
 
