@@ -23,17 +23,24 @@ namespace Capstone.DAO
 
         private string SQLGetNumberOfComicsInCollection = "SELECT COUNT(comic_id) FROM COLLECTIONS WHERE collection_id = @collection_id;";
 
-        private string SQLGetNumOfComicsByPublisher = "SELECT COUNT (comics.comic_id) FROM COMICS JOIN collections on comics.comic_id = collections.comic_id " +
+        private string SQLGetNumOfComicsByPublisher = "SELECT * FROM COMICS JOIN collections on comics.comic_id = collections.comic_id " +
             "WHERE collections.collection_id = @collection_id AND comics.publisher = @publisher;";
 
-        private string SQLGetNumOfComicsByCharacter = "SELECT COUNT (comic_character.character_id)" +
-            "FROM COMICS JOIN collections on comics.comic_id = collections.comic_id" +
-            "JOIN comic_character on comics.comic_id = comic_character.comic_id" +
-            "JOIN characters on comic_character.character_id = characters.character_id" +
+        private string SQLGetNumOfComicsByCharacter = "SELECT * " +
+            "FROM COMICS JOIN collections on comics.comic_id = collections.comic_id " +
+            "JOIN comic_character on comics.comic_id = comic_character.comic_id " +
+            "JOIN characters on comic_character.character_id = characters.character_id " +
             "WHERE collections.collection_id = @collection_id AND characters.character_name = @character;";
 
+        private string SQLGetAllComicsByPublisher = "SELECT * FROM COMICS JOIN collections on comics.comic_id = collections.comic_id " +
+            "WHERE comics.publisher = @publisher;";
 
+        private string SQLGetAllComicsByCharacter = "SELECT * FROM COMICS " +
+            "JOIN comic_character on comics.comic_id = comic_character.comic_id " +
+            "JOIN characters on comic_character.character_id = characters.character_id " +
+            "WHERE characters.character_name = @character;";
 
+        private string SQLGetCountOfAllComics = "SELECT * FROM comics;";
 
         public CollectionDAO(string dbConnectionString)
         {
@@ -156,50 +163,158 @@ namespace Capstone.DAO
             return numberOfComics;
         }
 
-        public int GetNumByPublisherInCollection (StatRequest statRequest)
+        public List<Comic> GetNumByPublisherInCollection (StatRequest statRequest)
         {
-            int numOfComics;
+            List<Comic> listOfComics = new List<Comic>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-
-
 
                 SqlCommand cmd = new SqlCommand(SQLGetNumOfComicsByPublisher, conn);
                 cmd.Parameters.AddWithValue("@collection_id", statRequest.CollectionId);
                 cmd.Parameters.AddWithValue("@publisher", statRequest.Publisher.ToUpper());
 
-                numOfComics = Convert.ToInt32(cmd.ExecuteScalar());
+                SqlDataReader reader = cmd.ExecuteReader();
 
+                while (reader.Read())
+                {
+                    Comic comic = new Comic();
+                    comic.Title = Convert.ToString(reader["title"]);
+                    comic.Description = Convert.ToString(reader["comic_desc"]);
+                    comic.Publisher = Convert.ToString(reader["publisher"]);
+                    comic.ComicId = Convert.ToInt32(reader["comic_id"]);
+                    comic.CollectionId = statRequest.CollectionId;
+
+                    listOfComics.Add(comic);
+
+                }
 
             }
-            return numOfComics;
+            return listOfComics;
 
         }
-        public int GetNumByCharacterInCollection(StatRequest statRequest)
+
+        public List<Comic> GetNumByCharacterInCollection(StatRequest statRequest)
         {
-            int numOfComics;
+            List<Comic> listOfComics = new List<Comic>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-
-
                 SqlCommand cmd = new SqlCommand(SQLGetNumOfComicsByCharacter, conn);
                 cmd.Parameters.AddWithValue("@collection_id", statRequest.CollectionId);
                 cmd.Parameters.AddWithValue("@character", statRequest.Character.ToUpper());
 
-                numOfComics = Convert.ToInt32(cmd.ExecuteScalar());
+                SqlDataReader reader = cmd.ExecuteReader();
 
+                while (reader.Read())
+                {
+                    Comic comic = new Comic();
+                    comic.Title = Convert.ToString(reader["title"]);
+                    comic.Description = Convert.ToString(reader["comic_desc"]);
+                    comic.Publisher = Convert.ToString(reader["publisher"]);
+                    comic.ComicId = Convert.ToInt32(reader["comic_id"]);
+                    comic.CollectionId = statRequest.CollectionId;
 
+                    listOfComics.Add(comic);
+
+                }
+            
             }
-            return numOfComics;
+            return listOfComics;
 
         }
 
+        public List<Comic> GetAllComicsByPublisher(StatRequest statRequest)
+        {
+            List<Comic> listOfComics = new List<Comic>();
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(SQLGetAllComicsByPublisher, conn);
+                cmd.Parameters.AddWithValue("@publisher", statRequest.Publisher.ToUpper());
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Comic comic = new Comic();
+                    comic.Title = Convert.ToString(reader["title"]);
+                    comic.Description = Convert.ToString(reader["comic_desc"]);
+                    comic.Publisher = Convert.ToString(reader["publisher"]);
+                    comic.ComicId = Convert.ToInt32(reader["comic_id"]);
+
+                    listOfComics.Add(comic);
+
+                }
+
+            }
+            return listOfComics;
+
+
+        }
+
+        public List<Comic> GetAllComicsByCharacter(StatRequest statRequest)
+        {
+            List<Comic> listOfComics = new List<Comic>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(SQLGetAllComicsByCharacter, conn);
+                cmd.Parameters.AddWithValue("@character", statRequest.Character);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Comic comic = new Comic();
+                    comic.Title = Convert.ToString(reader["title"]);
+                    comic.Description = Convert.ToString(reader["comic_desc"]);
+                    comic.Publisher = Convert.ToString(reader["publisher"]);
+                    comic.ComicId = Convert.ToInt32(reader["comic_id"]);
+
+                    listOfComics.Add(comic);
+
+                }
+
+            }
+
+            return listOfComics;
+
+        }
+
+        public List<Comic> GetCountOfAllComics()
+        {
+            List<Comic> listOfComics = new List<Comic>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(SQLGetCountOfAllComics, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Comic comic = new Comic();
+                    comic.Title = Convert.ToString(reader["title"]);
+                    comic.Description = Convert.ToString(reader["comic_desc"]);
+                    comic.Publisher = Convert.ToString(reader["publisher"]);
+                    comic.ComicId = Convert.ToInt32(reader["comic_id"]);
+
+                    listOfComics.Add(comic);
+                }
+            }
+
+            return listOfComics;
+        }
 
     }
 

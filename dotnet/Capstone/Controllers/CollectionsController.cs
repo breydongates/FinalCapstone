@@ -54,32 +54,51 @@ namespace Capstone.Controllers
         {
             int numberOfComics = collectionDAO.GetNumberOfComicsInCollection(collectionId);            
             
-            
-                return Ok(numberOfComics);      
+            return Ok(numberOfComics);      
             
             
         }
 
-        [HttpPost("publisher/statsRequest")]
+        [HttpPost("statsRequest/publisher")]
         
         public ActionResult GetNumOfComicsByPublisher (StatRequest statRequest)
         {
-            int numOfComics = collectionDAO.GetNumByPublisherInCollection(statRequest);
+            List<Comic> listOfComics = collectionDAO.GetNumByPublisherInCollection(statRequest);
 
-            return Ok(numOfComics);
+            return Ok(listOfComics);
         }
 
         [HttpPost("statsRequest/character")]
 
         public ActionResult GetNumOfComicsByCharacter (StatRequest statRequest)
         {
-            int numOfComics = collectionDAO.GetNumByCharacterInCollection(statRequest);
+            List<Comic> listOfComics = collectionDAO.GetNumByCharacterInCollection(statRequest);
 
-            return Ok(numOfComics);
+            return Ok(listOfComics);
         }
         
+        [HttpPost("allComicsStats/publisher")]
+        public ActionResult GetStatsForAllComicsByPublisher(StatRequest statRequest)
+        {
+            List<Comic> listOfComics = collectionDAO.GetAllComicsByPublisher(statRequest);
 
+            return Ok(listOfComics);
+        }
 
+        [HttpPost("allComicsStats/character")]
+        public ActionResult GetStatsForAllComicsByCharacter(StatRequest statRequest)
+        {
+            List<Comic> listOfComics = collectionDAO.GetAllComicsByCharacter(statRequest);
 
+            return Ok(listOfComics);
+        }
+
+        [HttpGet("allComicsStats/count")]
+        public ActionResult GetsCountOfAllComicsInCollections()
+        {
+            List<Comic> listOfComics = collectionDAO.GetCountOfAllComics();
+
+            return Ok(listOfComics);
+        }
     }
 }
