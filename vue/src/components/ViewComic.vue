@@ -32,7 +32,7 @@ export default {
     methods: {
         viewAllComics(){
             comicService.viewAllPublicComics()
-            foreach(comic in )
+            //foreach(comic in )
             .then(response => {
                 this.$store.commit("SET_COMICS", response.data);
             });
@@ -43,6 +43,7 @@ export default {
       this.collectionId = Number.parseInt(this.$route.params.collectionId);
       console.debug(this.collectionId);
 
+      if(this.Id){
       comicService.viewComicsByCollection(this.Id)
       .then((response) => {
           if(response.status == 200) {
@@ -50,7 +51,15 @@ export default {
           }
           
       })
-
+      }
+      else {
+          comicService.viewAllPublicComics()
+          .then((response) => {
+              if(response.status === 200) {
+                  this.$store.commit("SET_COMICS", response.data);
+              }
+          })
+      }
     },
     data () {
       return {

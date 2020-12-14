@@ -13,7 +13,7 @@ import ViewComic from "@/components/ViewComic";
 export default {
     components : {
         ViewComic
-    }
+    },
 
 };
 </script>
