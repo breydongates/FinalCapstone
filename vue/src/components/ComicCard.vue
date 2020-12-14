@@ -6,6 +6,7 @@
             Title: <b> {{Comic.title}} </b>
             Publisher: <b> {{Comic.publisher}} </b>          
            Description: <b> {{Comic.description}} </b>
+           <!--Main Character: <b> {{Comic.mainCharacter}} </b>-->
         </ul> 
 
 

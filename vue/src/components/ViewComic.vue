@@ -31,7 +31,9 @@ export default {
     name: "comic-list",
     methods: {
         viewAllComics(){
-            comicService.view().then(response => {
+            comicService.viewAllPublicComics()
+            foreach(comic in )
+            .then(response => {
                 this.$store.commit("SET_COMICS", response.data);
             });
         }
