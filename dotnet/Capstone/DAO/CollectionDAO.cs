@@ -21,6 +21,20 @@ namespace Capstone.DAO
 
         private string SQLGetAllCollectionsByUserId = "SELECT * FROM users_collection WHERE user_id = @user_id;";
 
+        private string SQLGetNumberOfComicsInCollection = "SELECT COUNT(comic_id) FROM COLLECTIONS WHERE collection_id = @collection_id;";
+
+        private string SQLGetNumOfComicsByPublisher = "SELECT COUNT (comics.comic_id) FROM COMICS JOIN collections on comics.comic_id = collections.comic_id " +
+            "WHERE collections.collection_id = @collection_id AND comics.publisher = @publisher;";
+
+        private string SQLGetNumOfComicsByCharacter = "SELECT COUNT (comic_character.character_id)" +
+            "FROM COMICS JOIN collections on comics.comic_id = collections.comic_id" +
+            "JOIN comic_character on comics.comic_id = comic_character.comic_id" +
+            "JOIN characters on comic_character.character_id = characters.character_id" +
+            "WHERE collections.collection_id = @collection_id AND characters.character_name = @character;";
+
+
+
+
         public CollectionDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
@@ -124,6 +138,68 @@ namespace Capstone.DAO
             return result;
 
         }
+
+        public int GetNumberOfComicsInCollection(int collectionId)
+        {
+            int numberOfComics;
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(SQLGetNumberOfComicsInCollection, conn);
+                cmd.Parameters.AddWithValue("@collection_id", collectionId);
+
+                numberOfComics = Convert.ToInt32(cmd.ExecuteScalar());             
+                
+
+            }
+            return numberOfComics;
+        }
+
+        public int GetNumByPublisherInCollection (StatRequest statRequest)
+        {
+            int numOfComics;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+
+
+                SqlCommand cmd = new SqlCommand(SQLGetNumOfComicsByPublisher, conn);
+                cmd.Parameters.AddWithValue("@collection_id", statRequest.CollectionId);
+                cmd.Parameters.AddWithValue("@publisher", statRequest.Publisher.ToUpper());
+
+                numOfComics = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+            }
+            return numOfComics;
+
+        }
+        public int GetNumByCharacterInCollection(StatRequest statRequest)
+        {
+            int numOfComics;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+
+
+                SqlCommand cmd = new SqlCommand(SQLGetNumOfComicsByCharacter, conn);
+                cmd.Parameters.AddWithValue("@collection_id", statRequest.CollectionId);
+                cmd.Parameters.AddWithValue("@character", statRequest.Character.ToUpper());
+
+                numOfComics = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+            }
+            return numOfComics;
+
+        }
+
+
 
     }
 

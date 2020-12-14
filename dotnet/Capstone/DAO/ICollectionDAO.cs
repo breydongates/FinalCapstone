@@ -14,6 +14,12 @@ namespace Capstone.DAO
 
         List<Collection> GetCollectionsByUserId(int userId);
 
+        int GetNumberOfComicsInCollection(int collectionId);
+
+        int GetNumByPublisherInCollection(StatRequest statRequest);
+
+        int GetNumByCharacterInCollection(StatRequest statRequest);
+
 
     }
 }

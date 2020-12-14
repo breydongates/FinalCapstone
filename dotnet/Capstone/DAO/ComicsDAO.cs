@@ -35,9 +35,9 @@ namespace Capstone.DAO
 
                 //adding comic to collectionId selected by user
                 SqlCommand cmd = new SqlCommand(SQLAddComicToComics, conn);
-                cmd.Parameters.AddWithValue("@title", comic.Title);
-                cmd.Parameters.AddWithValue("@comic_desc", comic.Description);
-                cmd.Parameters.AddWithValue("@publisher", comic.Publisher);
+                cmd.Parameters.AddWithValue("@title", comic.Title.ToUpper());
+                cmd.Parameters.AddWithValue("@comic_desc", comic.Description.ToUpper());
+                cmd.Parameters.AddWithValue("@publisher", comic.Publisher.ToUpper());
 
                //retreiving created comic id from the database
                 comic.ComicId = Convert.ToInt32(cmd.ExecuteScalar());
