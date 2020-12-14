@@ -30,8 +30,15 @@ export default {
     },
     name: "comic-list",
     methods: {
+<<<<<<< HEAD
         viewAllPublicComics(){
             comicService.view().then(response => {
+=======
+        viewAllComics(){
+            comicService.viewAllPublicComics()
+            //foreach(comic in )
+            .then(response => {
+>>>>>>> fd4dedcf8380b321b1b78786bde7f6f48c900281
                 this.$store.commit("SET_COMICS", response.data);
             });
         }
@@ -41,6 +48,7 @@ export default {
       this.collectionId = Number.parseInt(this.$route.params.collectionId);
       console.debug(this.collectionId);
 
+      if(this.Id){
       comicService.viewComicsByCollection(this.Id)
       .then((response) => {
           if(response.status == 200) {
@@ -48,7 +56,15 @@ export default {
           }
           
       })
-
+      }
+      else {
+          comicService.viewAllPublicComics()
+          .then((response) => {
+              if(response.status === 200) {
+                  this.$store.commit("SET_COMICS", response.data);
+              }
+          })
+      }
     },
     data () {
       return {

@@ -23,6 +23,12 @@ export default {
     },
     viewPublicComicsByPublisher() {
         return axios.post('/statsRequest/publisher');
+    },
+    viewUserComicsByCharacter(user) {
+        return axios.post(`/statsRequest/character/${user}`);
+    },
+    viewUserComicsByPublisher(user) {
+        return axios.post(`/statsRequest/publisher/${user}`);
     }
 
 }
