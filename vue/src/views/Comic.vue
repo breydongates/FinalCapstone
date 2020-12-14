@@ -1,7 +1,7 @@
 <template>
   <div> 
       <h1>  
-          Collection Name Comics
+          Your Comics
       </h1>
       <view-comic />
   </div>

@@ -5,6 +5,7 @@
           <h2>
               <ul>
                   <li v-for="Comic in Comics" :key="Comic.comicId">
+                      <router-link :to="{name: 'Comics', params: {comicId:Comic.comicId}}"> {{Comic.comicId}} {{Comic.comicTitle}}</router-link>
                   </li>
               </ul>
           </h2>  
