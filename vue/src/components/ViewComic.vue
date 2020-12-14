@@ -1,5 +1,5 @@
 <template>
-<div class="comic">
+<div class="viewComic">
     <h2>
         <ul>
             
@@ -38,13 +38,13 @@ export default {
         
     },
      created () {
-      this.collectionId = this.$route.params.collectionId;
+      this.collectionId = Number.parseInt(this.$route.params.collectionId);
       console.debug(this.collectionId);
 
       comicService.viewComicsByCollection(this.Id)
       .then((response) => {
           if(response.status == 200) {
-              this.Comics = response.data;
+              this.$store.commit("SET_COMICS", response.data);
           }
           
       })
@@ -53,11 +53,15 @@ export default {
     data () {
       return {
             Id: this.$props.collectionId,
-            Comics: [],
       }
     }, 
     props: {
         collectionId: Number,
+    },
+    computed: {
+        Comics() {
+            return this.$store.state.Comics;
+        }
     },
 }
 </script>

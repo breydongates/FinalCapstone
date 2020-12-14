@@ -118,15 +118,80 @@ border-radius: 50%;
 h1 {
     text-align: center;
 };
-.collectioncard {
-  background-color: lightcoral;
-  font-family: SequentialistBB, cursive;
-  border: 2px solid lavender;
-  border-radius: 10px;
-  width: 250px;
-  height: 550 px;
-  margin: 20 px;
+#viewComic{
+   display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+.comicCardBubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 300px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  padding: 10px;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  border: 2px solid black;
+};
+
+.comicCardBubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+  
+}
+
+#comicView{
+  border-radius: 12px;
+  background-image: radial-gradient(circle, lightcoral, tomato);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position:absolute;
+  top: 15rem;
+  left: 15rem;
+  bottom: 5rem;
+  right: 5rem;
+  text-align: center;
+  border: 4px solid white;
+  color: black;
+};
+#comicView > h1{
+    background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+  right:-6px;
+  position:absolute;
+  top:-2px;
+  transform:skew(-15deg);
+}; 
+
+
+
+#addComicButton{
+    background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+   bottom:-2px;
+  position:absolute;
+  left:-5px;
+  transform:skew(-15deg);
+};
 
 
 
