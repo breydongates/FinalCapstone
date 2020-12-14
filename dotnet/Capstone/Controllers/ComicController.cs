@@ -36,11 +36,7 @@ namespace Capstone.Controllers
             int userId = int.Parse(this.User.FindFirst("sub").Value);
             Comic result = comicsDAO.AddComicToCollection(comic, comic.CollectionId, userId);
 
-
             return Created("/Comics", result);
-
-
-           
 
         } 
     }
