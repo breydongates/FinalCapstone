@@ -35,6 +35,7 @@ export default new Vuex.Store({
           isPrivate: true,
         }
       ],
+      Comics: [],
 
   },
   mutations: {
@@ -68,8 +69,12 @@ export default new Vuex.Store({
     },
 
     ADD_COMIC(state, payload){
-      state.comic.push(payload);
+      state.Comics.push(payload);
     },
+    SET_COMICS(state, data){
+      state.Comics = data;
+    },
+
 
 
   }

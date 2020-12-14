@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit="saveComic()">
+  <form v-on:submit.prevent="saveComic()">
     <h1>Add Comic</h1>
     <div>
       <label for="title"> Title </label>
@@ -63,6 +63,7 @@ export default {
           this.comic.description = "";
           this.comic.publisher = "";
           this.comic.creator = "";
+          this.$store.commit("ADD_COMIC", response.data);
         }
       });
     },

@@ -118,15 +118,41 @@ border-radius: 50%;
 h1 {
     text-align: center;
 };
-.comicCard {
-  background-color: lightcoral;
-  font-family: SequentialistBB, cursive;
-  border: 2px solid lavender;
-  border-radius: 10px;
-  width: 250px;
-  height: 550 px;
-  margin: 20 px;
+#viewComic{
+   display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.comicCardBubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 300px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  padding: 10px;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  border: 2px solid black;
 };
+
+.comicCardBubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+  
+}
 
 #comicView{
   border-radius: 12px;
@@ -148,34 +174,13 @@ h1 {
   border:solid 2px #000;
   margin:0;
   padding:3px 10px;
-  left:-6px;
+  right:-6px;
   position:absolute;
   top:-2px;
   transform:skew(-15deg);
 }; 
-#comicView > ul {
-   background-color:#fff;
-  border:solid 2px #000;
-  box-shadow:0 6px 6px -6px #000;
-  display:inline-block;
-  flex:1 1;
-  height:200px;
-  margin:1vmin;
-  overflow:hidden;
-  position:relative;
-};
-#comicView:nth-child(1){
-  flex-basis: 200px;
-};
-#comicView:nth-child(2){
-  flex-basis: 200px;
-};
-#comicView:nth-child(3){
-  flex-basis: 200px;
-};
-#comicView:nth-child(4){
-  flex-basis: 200px;
-};
+
+
 
 #addComicButton{
     background-color:#fff;
@@ -184,7 +189,7 @@ h1 {
   padding:3px 10px;
    bottom:-2px;
   position:absolute;
-  right:-5px;
+  left:-5px;
   transform:skew(-15deg);
 };
 
