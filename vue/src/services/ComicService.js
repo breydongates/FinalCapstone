@@ -17,6 +17,12 @@ export default {
     }, 
     viewAllPublicComics(){
         return axios.get('/Comics');
+    },
+    viewPublicComicsByCharacter() {
+        return axios.post('/statsRequest/character');
+    },
+    viewPublicComicsByPublisher() {
+        return axios.post('/statsRequest/publisher');
     }
 
 }
