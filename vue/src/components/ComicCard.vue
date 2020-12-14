@@ -1,5 +1,6 @@
 <template>
     <div>  
+        <h1>{{collections.name}}</h1>
         <h2>
             {{Comic.title}}
             {{Comic.publisher}}           
