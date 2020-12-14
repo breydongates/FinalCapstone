@@ -47,5 +47,39 @@ namespace Capstone.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet("{collectionId}")]
+
+        public ActionResult GetNumberOfComicsInCollection(int collectionId)
+        {
+            int numberOfComics = collectionDAO.GetNumberOfComicsInCollection(collectionId);            
+            
+            
+                return Ok(numberOfComics);      
+            
+            
+        }
+
+        [HttpPost("publisher/statsRequest")]
+        
+        public ActionResult GetNumOfComicsByPublisher (StatRequest statRequest)
+        {
+            int numOfComics = collectionDAO.GetNumByPublisherInCollection(statRequest);
+
+            return Ok(numOfComics);
+        }
+
+        [HttpPost("statsRequest/character")]
+
+        public ActionResult GetNumOfComicsByCharacter (StatRequest statRequest)
+        {
+            int numOfComics = collectionDAO.GetNumByCharacterInCollection(statRequest);
+
+            return Ok(numOfComics);
+        }
+        
+
+
+
     }
 }
