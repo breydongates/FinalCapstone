@@ -4,7 +4,7 @@
         <ul>  
             <li
             v-for="Collection in Collections" :key="Collection.collectionId"> 
-            <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}">{{Collection.collectionId}} {{Collection.collectionName}}</router-link>
+            <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
             </li>
         </ul>
       </h2>

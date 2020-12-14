@@ -35,6 +35,8 @@
 
 <script>
 import comicService from "../services/ComicService";
+//import AuthService from "../services/AuthService.js";
+
 export default {
   name: "CreateComic",
   data() {
@@ -57,13 +59,18 @@ export default {
         creator: this.comic.creator,
         collectionId: this.comic.collectionId,
       };
-      comicService.addComic(newComic).then((response) => {
+      comicService.addComic(newComic, this.user)
+      .then((response) => {
+        if (this.$store.state.user.role === 'Standard' && this.$store.state.Comics <= 5){
         if (response.status === 201) {
           this.comic.title = "";
           this.comic.description = "";
           this.comic.publisher = "";
           this.comic.creator = "";
           this.$store.commit("ADD_COMIC", response.data);
+        }}
+        else {
+          alert ("Please upgrade to a premium account");
         }
       });
     },

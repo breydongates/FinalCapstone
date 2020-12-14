@@ -44,7 +44,7 @@ export default {
       comicService.viewComicsByCollection(this.Id)
       .then((response) => {
           if(response.status == 200) {
-              this.$store.commit("SET_COMICS", response.data); 
+              this.$store.commit("SET_COMICS", response.data);
           }
           
       })
@@ -53,14 +53,13 @@ export default {
     data () {
       return {
             Id: this.$props.collectionId,
-            
       }
     }, 
     props: {
         collectionId: Number,
     },
     computed: {
-        Comics(){
+        Comics() {
             return this.$store.state.Comics;
         }
     },
