@@ -1,11 +1,12 @@
 <template>
-    <div>  
-        <h1>{{collections.name}}</h1>
-        <h2>
-            {{Comic.title}}
-            {{Comic.publisher}}           
-            {{Comic.description}}
-        </h2> 
+
+    <div class="comicCard">  
+        <section>
+            Title: <b> {{Comic.title}} </b>
+            Publisher: <b> {{Comic.publisher}} </b>          
+           Description: <b> {{Comic.description}} </b>
+        </section> 
+
 
     </div>
 </template>

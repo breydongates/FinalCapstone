@@ -1,11 +1,14 @@
 <template>
 
-  <div> 
+  <div id="comicView"> 
+    <h1> Your Comics </h1>
+    <section id="viewComic">
     <view-comic v-bind:collectionId="collectionId">
-
-  
     </view-comic>
+      </section>
+    <section id="addComicButton">
      <create-comic v-bind:collectionId="collectionId"/>
+     </section>
   </div>
 </template>
 
