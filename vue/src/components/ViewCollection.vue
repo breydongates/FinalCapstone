@@ -2,7 +2,7 @@
   <div class="collection">
       <h2> 
         <ul>  
-            <li
+            <li class="collectionBubble collectionBubble-bottom-left"
             v-for="Collection in Collections" :key="Collection.collectionId"> 
             <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
             </li>

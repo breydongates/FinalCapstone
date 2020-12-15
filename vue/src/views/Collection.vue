@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <h1 class="yourCollections"> Your Collections </h1>
+  <div class="yourCollections">
+      <h1> Your Collections </h1>
       <view-collection />
   </div>
 </template>

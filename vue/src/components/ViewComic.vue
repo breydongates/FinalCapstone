@@ -30,15 +30,10 @@ export default {
     },
     name: "comic-list",
     methods: {
-<<<<<<< HEAD
-        viewAllPublicComics(){
-            comicService.view().then(response => {
-=======
         viewAllComics(){
             comicService.viewAllPublicComics()
             //foreach(comic in )
             .then(response => {
->>>>>>> fd4dedcf8380b321b1b78786bde7f6f48c900281
                 this.$store.commit("SET_COMICS", response.data);
             });
         }

@@ -3,7 +3,7 @@
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
 <body>
-  <div> <!-- If you start to get random styling you don't like, remove container from this div -->
+  <!-- If you start to get random styling you don't like, remove container from this div -->
     <div id="nav">
       <router-link class="nav-item" v-bind:to="{ name: 'home' }">
         <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
@@ -30,7 +30,7 @@
     <div>
       <home />
     </div>
-  </div>
+ 
   
 </body>
 </template>
@@ -158,25 +158,31 @@ h1 {
   border-radius: 12px;
   background-image: radial-gradient(circle, lightcoral, tomato);
   display: flex;
-  justify-content: center;
-  align-content: center;
+  flex-wrap: wrap;
+  font-family: 'Comic Sans', cursive;
+  justify-content: left;
+  align-content: left;
   position:absolute;
   top: 15rem;
   left: 15rem;
   bottom: 5rem;
   right: 5rem;
   text-align: center;
-  border: 4px solid white;
+  border: 10px solid white;
+  box-shadow: 0 6px 6px -6px #000;
   color: black;
+  padding: 10%;
+  margin: 5%;
 };
 #comicView > h1{
     background-color:#fff;
-  border:solid 2px #000;
+  border-left:solid 2px #000;
+  border-bottom:solid 2px #000;
   margin:0;
   padding:3px 10px;
-  right:-6px;
+  right:-1%;
   position:absolute;
-  top:-2px;
+  top:-1%;
   transform:skew(-15deg);
 }; 
 
@@ -192,7 +198,68 @@ h1 {
   left:-5px;
   transform:skew(-15deg);
 };
+.yourCollections{
+    border-radius: 12px;
+  background-image: radial-gradient(circle, lightcoral, tomato);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Comic Sans', cursive;
+  justify-content: left;
+  align-content: left;
+  position:absolute;
+  top: 15rem;
+  left: 15rem;
+  bottom: 5rem;
+  right: 5rem;
+  text-align: center;
+  border: 10px solid white;
+  box-shadow: 0 6px 6px -6px #000;
+  color: black;
+  padding: 10%;
+  margin: 5%;
+};
+.yourCollections > h1 {
+    background-color:#fff;
+  border-left:solid 2px #000;
+  border-bottom:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+  right:-1%;
+  position:absolute;
+  top:-1%;
+  transform:skew(-15deg);
+};
 
+.collectionBubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 300px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  padding: 10px;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  border: 2px solid black;
+};
+
+.collectionBubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+  
+}
 
 
 
