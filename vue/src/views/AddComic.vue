@@ -24,7 +24,6 @@ export default {
     },
     created () {
       this.collectionId = Number.parseInt(this.$route.params.collectionId);
-      console.debug(this.collectionId);
     },
     data () {
       return {

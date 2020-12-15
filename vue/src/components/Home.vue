@@ -8,24 +8,12 @@
     <router-link :to="{ name: 'Collection' }">
       View Your Collections
     </router-link>
-    <router-link :to="{ name: 'AddComic' }"> Add Comic </router-link>
-    <router-link :to="{ name: 'Comics' }"> View Comics </router-link>
   </div>
 </template>
 
 <script>
-import collectionService from "@/services/CollectionService.js";
-import comicService from "@/services/ComicService.js";
 
 export default {
   name: "home",
-  methods: {
-    viewAllCollectionsByUser() {
-      collectionService.viewAllCollectionsByUser();
-    },
-    addComic() {
-      comicService.addComic();
-    },
-  },
-};
+}
 </script>

@@ -2,9 +2,8 @@
   <div class="collection">
       <h2> 
         <ul>  
-            <li class="collectionBubble collectionBubble-bottom-left"
-            v-for="Collection in Collections" :key="Collection.collectionId"> 
-            <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
+            <li class="collectionBubble collectionBubble-bottom-left" v-for="Collection in Collections" :key="Collection.collectionId"> 
+                <router-link :to="{name: 'Comics', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
             </li>
         </ul>
       </h2>
@@ -13,7 +12,6 @@
 
 <script>
 import collectionService from "@/services/CollectionService.js";
-
 
 export default {
 name: "CollectionList",
@@ -32,7 +30,7 @@ methods: {
 },
 created() {
 
-    collectionService.viewAllCollectionsByUser().then( (response) =>{
+    collectionService.viewAllPublicCollections().then( (response) =>{
         this.Collections = response.data;
     });
 }, 

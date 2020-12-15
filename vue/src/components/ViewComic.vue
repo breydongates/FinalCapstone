@@ -2,20 +2,13 @@
 <div class="viewComic">
     <h2>
         <ul>
-            
                <comic-card 
                v-for="c in Comics"
                v-bind:key="c.ComicId"
                v-bind:Comic="c"> 
 
                </comic-card>
-               
-            
         </ul>
-        
-
-
-        
     </h2>
 </div>
 

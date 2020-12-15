@@ -10,8 +10,6 @@ import CreateCollection from "@/views/CreateCollection.vue";
 import AddComic from "@/views/AddComic.vue";
 import Comic from "@/views/Comic.vue";
 import PublicCollections from "@/views/PublicCollections.vue";
-import ViewCharacterComics from "@/views/ViewCharacterComics.vue";
-import ViewPublisherComics from "@/views/ViewPublisherComics.vue";
 
 Vue.use(Router);
 
@@ -101,23 +99,6 @@ const router = new Router({
         requiresAuth: false,
       },
     },
-    {
-      path: "statsRequest/character",
-      name: "CharacterComics",
-      component: ViewCharacterComics,
-      meta: {
-        requiresAuth: false,
-      },
-    },
-    {
-      path: "statsRequest/publisher",
-      name: "PublisherComics",
-      component: ViewPublisherComics,
-      meta: {
-        requiresAuth: false,
-      }
-    },
-    
     
   ],
 });
