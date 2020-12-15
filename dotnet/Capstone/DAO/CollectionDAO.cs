@@ -21,7 +21,7 @@ namespace Capstone.DAO
 
         private string SQLGetAllCollectionsByUserId = "SELECT * FROM users_collection WHERE user_id = @user_id;";
 
-        private string SQLGetNumberOfComicsInCollection = "SELECT COUNT(comic_id) FROM COLLECTIONS WHERE collection_id = @collection_id;";
+        private string SQLGetNumberOfComicsInCollection = "SELECT COUNT(collection_id) FROM COLLECTIONS WHERE collection_id = @collection_id;";
 
         private string SQLGetNumOfComicsByPublisher = "SELECT * FROM COMICS JOIN collections on comics.comic_id = collections.comic_id " +
             "WHERE collections.collection_id = @collection_id AND comics.publisher = @publisher;";
