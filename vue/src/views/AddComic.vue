@@ -1,26 +1,20 @@
 <template>
 
   <div id="comicView"> 
-    <h1> Your Comics </h1>
-    <section id="viewComic">
-    <view-comic v-bind:collectionId="collectionId">
-    </view-comic>
+    <h1>Add Comics to Collection</h1>
+      <section id="addComicButton">
+        <create-comic v-bind:collectionId="collectionId"/>
       </section>
-    <section id="addComicButton">
-     <create-comic v-bind:collectionId="collectionId"/>
-     </section>
   </div>
 </template>
 
 <script>
 import CreateComic from "@/components/CreateComic.vue";
-import ViewComic from  "@/components/ViewComic.vue";
 
 export default {
     name: "add-comic",
     components: {
        CreateComic,
-       ViewComic,
     },
     created () {
       this.collectionId = Number.parseInt(this.$route.params.collectionId);

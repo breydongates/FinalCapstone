@@ -3,13 +3,8 @@
     <h1>Add Comic</h1>
     <div>
       <label for="title"> Title </label>
-      <input 
-      type="text" 
-      id="title" 
-      name="Title" 
-      v-model="comic.title"
-       />
-       <br />
+      <input type="text" id="title" name="Title" v-model="comic.title" />
+      <br />
       <label for="description"> Description </label>
       <input
         type="text"
@@ -29,7 +24,12 @@
       <!--Add input for characters, require at least 1 character entry-->
 
       <label for="mainCharacter"> Main Character </label>
-      <input type="text" id="mainCharacter" name = "mainCharacter" v-model="comic.mainCharacter" />
+      <input
+        type="text"
+        id="mainCharacter"
+        name="mainCharacter"
+        v-model="comic.mainCharacter"
+      />
       <div class="actions">
         <button type="submit">Save Comic</button>
       </div>
@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import comicService from "../services/ComicService";
-//import AuthService from "../services/AuthService.js";
+import comicService from "../services/ComicService.js";
+import collectionSerice from "../services/CollectionService.js"
 
 export default {
   name: "CreateComic",
@@ -53,6 +53,7 @@ export default {
         mainCharacter: "",
         collectionId: this.$props.collectionId,
       },
+      numberOfComicsInCollection: 0,
     };
   },
   methods: {
@@ -65,27 +66,34 @@ export default {
         mainCharacter: this.comic.mainCharacter,
         collectionId: this.comic.collectionId,
       };
-      comicService.addComic(newComic, this.user)
+      collectionSerice.getNumOfComicsInCollection(this.collectionId)
       .then((response) => {
-        if (this.$store.state.user.role === 'Standard' && this.$store.state.Comics <= 5){
-        if (response.status === 201) {
-          this.comic.title = "";
-          this.comic.description = "";
-          this.comic.publisher = "";
-          this.comic.creator = "";
-          this.comic.mainCharacter = "",
-          this.$store.commit("ADD_COMIC", response.data);
-        }}
-        else {
-          alert ("Please upgrade to a premium account");
+        if(response.status === 200) {
+          this.numberOfComicsInCollection = response.data;
         }
       });
-    },
+      if ((this.$store.state.user.role === 'Standard' && this.numberOfComicsInCollection <= 5) || this.$store.state.user.role === "Premium"){
+        comicService.addComic(newComic, this.user)
+        .then((response) => {
+          if (response.status === 201) {
+            this.comic.title = "";
+            this.comic.description = "";
+            this.comic.publisher = "";
+            this.comic.creator = "";
+            this.comic.mainCharacter = "";
+          }
+        });
+      }else 
+        {
+          alert ("Limit of comics reached. Please upgrade to a premium account");
+        }
+    }
   },
+  
   props: {
     collectionId: Number,
-  },
-};
+  }    
+}
 </script>
 
 <style>

@@ -3,8 +3,12 @@
       <h2> 
         <ul>  
             <li class="collectionBubble collectionBubble-bottom-left"
-            v-for="Collection in Collections" :key="Collection.collectionId"> 
-            <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
+            v-for="Collection in Collections" :key="Collection.collectionId">
+            {{Collection.collectionName}} 
+            <br>
+            <router-link :to="{name: 'AddComic', params: {collectionId:Collection.collectionId}}" tag="button">Add Comics</router-link>
+            <br>
+            <router-link :to="{name: 'CollectionStats', params: {collectionId:Collection.collectionId}}" tag="button">See Collection Details</router-link>
             </li>
         </ul>
       </h2>

@@ -10,6 +10,7 @@ import CreateCollection from "@/views/CreateCollection.vue";
 import AddComic from "@/views/AddComic.vue";
 import Comic from "@/views/Comic.vue";
 import PublicCollections from "@/views/PublicCollections.vue";
+import CollectionStats from "@/views/CollectionStats.vue";
 
 Vue.use(Router);
 
@@ -97,6 +98,14 @@ const router = new Router({
       component: PublicCollections,
       meta: {
         requiresAuth: false,
+      },
+    },
+    {
+      path: "/collection-stats/:collectionId",
+      name: "CollectionStats",
+      component: CollectionStats,
+      meta: {
+        requiresAuth: true,
       },
     },
     
