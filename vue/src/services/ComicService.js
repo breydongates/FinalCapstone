@@ -21,9 +21,7 @@ export default {
     viewPublicComicsByCharacter() {
         return axios.post('/statsRequest/character');
     },
-    viewPublicComicsByPublisher() {
-        return axios.post('/statsRequest/publisher');
-    },
+   
     viewUserComicsByCharacter(user) {
         return axios.post(`/statsRequest/character/${user}`);
     },
