@@ -62,7 +62,7 @@ export default {
         title: this.comic.title,
         description: this.comic.description,
         publisher: this.comic.publisher,
-        creator: this.comic.creator,
+        edition: this.comic.edition,
         mainCharacter: this.comic.mainCharacter,
         collectionId: this.comic.collectionId,
       };
@@ -78,7 +78,7 @@ export default {
             this.comic.title = "";
             this.comic.description = "";
             this.comic.publisher = "";
-            this.comic.creator = "";
+            this.comic.edition = "";
             this.comic.mainCharacter = "";
           }
         });
