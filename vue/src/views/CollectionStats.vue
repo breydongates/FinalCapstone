@@ -1,8 +1,8 @@
 <template>
 
-  <div id="comicView"> 
+  <div id="comicView" > 
     <h1> Your Comics </h1>
-    <section id="viewComic">
+    <section id="viewComic" style="overflow-y:auto">
         <view-comic v-bind:collectionId="collectionId">
     </view-comic>
     </section>
@@ -34,5 +34,10 @@ export default {
 </script>
 
 <style>
-
+.comicView{
+  height: 100%;
+}
+#viewComic{
+  height: 75%;
+}
 </style>

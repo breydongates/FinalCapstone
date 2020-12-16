@@ -157,7 +157,7 @@ h1 {
 #comicView{
   border-radius: 12px;
   background-image: radial-gradient(circle, lightcoral, tomato);
-  display: flex;
+  display: inline;
   flex-wrap: wrap;
   font-family: 'Comic Sans', cursive;
   justify-content: left;
@@ -192,10 +192,10 @@ h1 {
     background-color:#fff;
   border:solid 2px #000;
   margin:0;
-  padding:3px 10px;
+  padding:.1% 1%;
    bottom:-2px;
-  position:absolute;
-  left:-5px;
+  position: absolute;
+  left:-.5%;
   transform:skew(-15deg);
 };
 .yourCollections{
@@ -224,8 +224,8 @@ h1 {
   border-bottom:solid 2px #000;
   margin:0;
   padding:3px 10px;
-  right:-1%;
-  position:absolute;
+  left:-1%;
+  position: absolute;
   top:-1%;
   transform:skew(-15deg);
 };
@@ -259,6 +259,10 @@ h1 {
   left: 32px;
   bottom: -24px;
   
+};
+
+.collectionList{
+  height: 85%;
 }
 
 

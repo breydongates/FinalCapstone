@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1 class="publicComics"> Public Comics</h1>
-      <div class="collection">
+      <div class="collection" style="overflow-y:auto">
           <h2>
               <ul>
                   <li v-for="Comic in Comics" :key="Comic.comicId">

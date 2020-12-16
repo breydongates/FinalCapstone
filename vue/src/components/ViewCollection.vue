@@ -1,5 +1,5 @@
 <template>
-  <div class="collection">
+  <div class="collection" style="overflow-y:auto">
       <h2> 
         <ul>  
             <li class="collectionBubble collectionBubble-bottom-left"

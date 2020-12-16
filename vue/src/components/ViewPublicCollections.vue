@@ -1,12 +1,12 @@
 <template>
   <div class="collection">
-      <h2> 
-        <ul>  
+      
+        <ul class="collectionList" style="overflow-y:auto">  
             <li class="collectionBubble collectionBubble-bottom-left" v-for="Collection in Collections" :key="Collection.collectionId"> 
                 <router-link :to="{name: 'Comics', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
             </li>
         </ul>
-      </h2>
+      
   </div>
 </template>
 
@@ -40,6 +40,8 @@ created() {
 </script>
 
 <style>
-
+.collection{
+    height: 100%;
+}
 
 </style>
