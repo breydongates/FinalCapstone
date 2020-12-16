@@ -228,7 +228,7 @@ h1 {
   border-bottom:solid 2px #000;
   margin:0;
   padding:3px 10px;
-  right:-1%;
+  left:-1%;
   position:absolute;
   top:-1%;
   transform:skew(-15deg);

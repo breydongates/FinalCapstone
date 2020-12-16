@@ -1,6 +1,6 @@
 <template>
 
-      <div class="yourCollections">
+      <div >
           <view-public-collections></view-public-collections>
           <all-public-comic-stats>
               
