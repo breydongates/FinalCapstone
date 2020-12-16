@@ -80,53 +80,45 @@ html {
   transform:skew(-15deg);
 };
  #app {
-  background-color: white;
-  border-radius: 40%;
-  font-family: SequentialistBB, cursive;
-  font-size: 2.5vw;
-  justify-content: center;
-  align-content: center;
+   font-family: 'Comic Sans', cursive;
+   font-size: 110%;
+ background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:5em;
+  padding: 5em 1em;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  
+};
+#app:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
   position:absolute;
-  top: 15rem;
-  left: 15rem;
-  bottom: 5rem;
-  right: 5rem;
-  text-align: center;
-  font-size: 2.4vw;
-  font-style: italic;
-  padding: 4% 6% 12% 0%;
+  transform:skew(-15deg);
+  width:0;
 };
-#app-bottom-left:before {
-content: "";
-width: 0px;
-height: 0px;
-position: absolute;
-border-left: 24px solid white;
-border-right: 12px solid transparent;
-border-top: 12px solid white;
-border-bottom: 20px solid transparent;
-left: 32px;
-bottom: -24px;
-};
-#app.span {
-  display:block;
-  font-size: 3vw;
-  font-weight: bold;
+#app::after{
+   border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
 }
 
-li {
-   list-style: none;
-};
-li::before{
-   content: '';
-   display: inline-block;
-   height: 1em;
-   width: 1em;
-background-image: url(assets/Boom.png);
-background-size: contain;
-background-repeat: no-repeat;
-border-radius: 50%;
-};
+
 h1 {
     text-align: center;
 };
@@ -207,11 +199,11 @@ h1 {
 .yourCollections{
     border-radius: 12px;
   background-image: radial-gradient(circle, lightcoral, tomato);
-  display: flex;
+  display: inline;
   flex-wrap: wrap;
   font-family: 'Comic Sans', cursive;
-  justify-content: left;
-  align-content: left;
+  justify-content: right;
+  align-content: right;
   position:absolute;
   top: 15rem;
   left: 15rem;
@@ -236,40 +228,59 @@ h1 {
 };
 
 .collectionBubble {
+background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+ 
+  margin:.5em;
+  padding:.5em 1em;
   position: relative;
-  font-family: sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  width: 300px;
-  background: #fff;
-  border-radius: 40px;
-  padding: 24px;
-  text-align: center;
-  color: #000;
-  padding: 10px;
-  margin-bottom: 10%;
-  margin-top: 10%;
-  border: 2px solid black;
-};
-
-.collectionBubble-bottom-left:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 24px solid #fff;
-  border-right: 12px solid transparent;
-  border-top: 12px solid #fff;
-  border-bottom: 20px solid transparent;
-  left: 32px;
-  bottom: -24px;
+  padding-bottom: 2%;
   
 };
 
-.collectionList{
-  height: 85%;
+.collectionBubble:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+};
+.collectionBubble::after{
+   border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
 }
 
+.collectionList{
+  height: 85%;
+  padding-top: 10%;
+  padding-left: 60%;
+  padding-top: 1%;
+  padding-bottom: 10%;
+}
+.statsBox{
+     background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:.1% 1%;
+   bottom:-2px;
+  position: absolute;
+  left:-.5%;
+  transform:skew(-15deg);
+}
 
 
 </style>
