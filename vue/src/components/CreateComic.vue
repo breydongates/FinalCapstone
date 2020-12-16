@@ -19,8 +19,8 @@
         name="Publisher"
         v-model="comic.publisher"
       />
-      <label for="creator"> Creator </label>
-      <input type="text" id="creator" name="Creator" v-model="comic.creator" />
+      <label for="edition"> Edition Number </label>
+      <input type="text" id="edition" name="Edition" v-model="comic.edition" />
       <!--Add input for characters, require at least 1 character entry-->
 
       <label for="mainCharacter"> Main Character </label>
@@ -49,7 +49,7 @@ export default {
         title: "",
         description: "",
         publisher: "",
-        creator: "",
+        edition: "",
         mainCharacter: "",
         collectionId: this.$props.collectionId,
       },
