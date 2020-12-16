@@ -267,7 +267,7 @@ namespace Capstone.DAO
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand(SQLGetAllComicsByCharacter, conn);
-                cmd.Parameters.AddWithValue("@character", statRequest.Character);
+                cmd.Parameters.AddWithValue("@character", statRequest.Character.ToUpper());
 
                 SqlDataReader reader = cmd.ExecuteReader();
 

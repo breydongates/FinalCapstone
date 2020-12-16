@@ -80,28 +80,6 @@ html {
   transform:skew(-15deg);
 };
  #app {
-<<<<<<< HEAD
-  background: url(assets/squigglybubble.svg);
-  font-family: SequentialistBB, cursive;
-  font-size: 2.5vw;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  position:absolute;
-  top: 15rem;
-  left: 15rem;
-  bottom: 5rem;
-  right: 5rem;
-  text-align: center;
-  font-size: 2.4vw;
-  font-style: italic;
-  padding: 4% 6% 12% 0%;
-};
-#app.span {
-  display:block;
-  font-size: 3vw;
-  font-weight: bold;
-=======
    font-family: 'Comic Sans', cursive;
    font-size: 110%;
  background-color:#fff;
@@ -138,7 +116,6 @@ html {
   position:absolute;
   transform:skew(-15deg);
   width:0;
->>>>>>> 21640d9b8558a330d71998e21d4d8c95e387f278
 }
 
 
@@ -269,20 +246,6 @@ background-color:#fff;
   
 };
 
-<<<<<<< HEAD
-.collectionBubble-bottom-left:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 24px solid #fff;
-  border-right: 12px solid transparent;
-  border-top: 12px solid #fff;
-  border-bottom: 20px solid transparent;
-  left: 32px;
-  bottom: -24px;
-  
-=======
 .collectionBubble:before {
   border:solid 12px transparent;
   border-left:solid 12px #000;
@@ -324,7 +287,6 @@ background-color:#fff;
   position: absolute;
   left:-.5%;
   transform:skew(-15deg);
->>>>>>> 21640d9b8558a330d71998e21d4d8c95e387f278
 }
 
 
