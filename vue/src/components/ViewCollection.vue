@@ -1,8 +1,8 @@
 <template>
   <div class="collection" >
       <div >
-        <ul class="collectionBubble" style="overflow-y:auto">  
-            <li 
+        <ul class="collectionList" style="overflow-y:auto">  
+            <li class="collectionBubble"
             v-for="Collection in Collections" :key="Collection.collectionId">
             {{Collection.collectionName}} 
             <br>

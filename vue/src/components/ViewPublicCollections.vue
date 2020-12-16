@@ -1,5 +1,6 @@
 <template>
-  <div class="collection">
+  <div >
+      <h1>Public Collections</h1>
       
         <ul class="collectionList" style="overflow-y:auto">  
             <li class="collectionBubble" v-for="Collection in Collections" :key="Collection.collectionId"> 
