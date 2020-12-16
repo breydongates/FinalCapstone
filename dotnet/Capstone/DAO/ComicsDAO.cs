@@ -58,6 +58,8 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@characterId", characterId);
                 cmd.Parameters.AddWithValue("@comicId", comic.ComicId);
 
+                cmd.ExecuteNonQuery();
+
                 //Add comic to collectionId
                 cmd = new SqlCommand(SQLAddComicToCollections, conn);
                 cmd.Parameters.AddWithValue("@collection_id", collectionId);
