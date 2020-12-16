@@ -45,26 +45,15 @@ CREATE TABLE comics (
 	title nvarchar (200) NOT NULL,
 	comic_desc nvarchar (500),
 	publisher nvarchar (100) NOT NULL,
+	maincharacter nvarchar (200),
+	edition int,
 	CONSTRAINT PK_comics PRIMARY KEY (comic_id)
-)
-
-CREATE TABLE comic_creator (
-	comic_id int NOT NULL,
-	creator_id int NOT NULL
-	CONSTRAINT FK_comic_creator_comics FOREIGN KEY (comic_id) REFERENCES comics (comic_id),
-)
-
-CREATE TABLE creators (
-	creator_id int IDENTITY (1,1) NOT NULL,
-	creator_name varchar (200)
-	CONSTRAINT PK_creators PRIMARY KEY (creator_id)
 )
 
 CREATE TABLE comic_character (
 	comic_id int NOT NULL,
 	character_id int NOT NULL
-	CONSTRAINT FK_comic_character_comics FOREIGN KEY (comic_id) REFERENCES comics (comic_id),
-	
+	CONSTRAINT FK_comic_character_comics FOREIGN KEY (comic_id) REFERENCES comics (comic_id),	
 )
 
 CREATE TABLE characters (
@@ -79,9 +68,6 @@ INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','Yh
 
 ALTER TABLE collections 
 ADD CONSTRAINT FK_collections_comics FOREIGN KEY (comic_id) REFERENCES comics (comic_id)
-
-ALTER TABLE comic_creator
-ADD CONSTRAINT FK_comic_creator_creators FOREIGN KEY (creator_id) REFERENCES creators (creator_id)
 
 ALTER TABLE comic_character 
 ADD CONSTRAINT FK_comic_character_characters FOREIGN KEY (character_id) REFERENCES characters (character_id)
