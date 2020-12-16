@@ -71,7 +71,6 @@ export default {
         if(response.status === 200) {
           this.numberOfComicsInCollection = response.data;
         }
-      });
       if ((this.$store.state.user.role === 'Standard' && this.numberOfComicsInCollection < 5) || this.$store.state.user.role === 'Premium'){
         comicService.addComic(newComic, this.user)
         .then((response) => {
@@ -87,6 +86,7 @@ export default {
         {
           alert ("Limit of comics reached. Please upgrade to a premium account");
         }
+      });
     }
   },
   
