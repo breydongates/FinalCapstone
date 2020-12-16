@@ -1,23 +1,22 @@
 <template>
-  <div class="yourCollections">
-      <h1>Public Collections</h1>
-      <div class="collection">
+
+      <div class="yourCollections">
           <view-public-collections></view-public-collections>
-          <all-comic-stats>
+          <all-public-comic-stats>
               
-          </all-comic-stats>
+          </all-public-comic-stats>
       </div>
-  </div>
+ 
 </template>
 
 <script>
 import ViewPublicCollections from "@/components/ViewPublicCollections.vue"
-import AllComicStats from "@/components/AllPublicComicStats.vue"
+import AllPublicComicStats from "@/components/AllPublicComicStats.vue"
 
 export default {
     components : {
         ViewPublicCollections,
-        AllComicStats,
+        AllPublicComicStats,
     },
 
     data() {

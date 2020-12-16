@@ -281,6 +281,8 @@ background-color:#fff;
   left:-.5%;
   transform:skew(-15deg);
 }
-
+li{
+  list-style-type: none;
+}
 
 </style>
