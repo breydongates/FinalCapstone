@@ -80,10 +80,10 @@ html {
   transform:skew(-15deg);
 };
  #app {
-  background: url(assets/squigglybubble.svg);
+  background-color: white;
+  border-radius: 40%;
   font-family: SequentialistBB, cursive;
   font-size: 2.5vw;
-  display: flex;
   justify-content: center;
   align-content: center;
   position:absolute;
@@ -95,6 +95,18 @@ html {
   font-size: 2.4vw;
   font-style: italic;
   padding: 4% 6% 12% 0%;
+};
+#app-bottom-left:before {
+content: "";
+width: 0px;
+height: 0px;
+position: absolute;
+border-left: 24px solid white;
+border-right: 12px solid transparent;
+border-top: 12px solid white;
+border-bottom: 20px solid transparent;
+left: 32px;
+bottom: -24px;
 };
 #app.span {
   display:block;
@@ -118,11 +130,7 @@ border-radius: 50%;
 h1 {
     text-align: center;
 };
-#viewComic{
-   display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+
 .comicCardBubble {
   position: relative;
   font-family: sans-serif;
@@ -137,7 +145,6 @@ h1 {
   padding: 10px;
   margin-bottom: 10%;
   margin-top: 10%;
-  border: 2px solid black;
 };
 
 .comicCardBubble-bottom-left:before {
@@ -171,8 +178,7 @@ h1 {
   border: 10px solid white;
   box-shadow: 0 6px 6px -6px #000;
   color: black;
-  padding: 10%;
-  margin: 5%;
+
 };
 #comicView > h1{
     background-color:#fff;
@@ -215,8 +221,7 @@ h1 {
   border: 10px solid white;
   box-shadow: 0 6px 6px -6px #000;
   color: black;
-  padding: 10%;
-  margin: 5%;
+  
 };
 .yourCollections > h1 {
     background-color:#fff;

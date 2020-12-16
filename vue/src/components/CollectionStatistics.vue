@@ -39,17 +39,17 @@ export default {
             totalNumberOfComicsByPublisher: 0,
             totalNumberOfComicsByCharacter: 0,
             statRequest: {
-                CollectionId: 0,
+                CollectionId: this.$props.collectionId,
                 Publisher:"",
                 Character:"",
             }
         } 
     },
     created() {
-         CollectionService.getNumOfComicsInCollection(this.CollectionId)
+         CollectionService.getNumOfComicsInCollection(this.statRequest.CollectionId)
         .then((response) => {
             if(response.status === 200) {
-                this.totalNumberOfComics = response.data.length;            
+                this.totalNumberOfComics = response.data;            
             }
         })
     },
@@ -71,6 +71,9 @@ export default {
             })
         }
         
+    },
+    props: {
+        collectionId: Number,
     },
 
 }

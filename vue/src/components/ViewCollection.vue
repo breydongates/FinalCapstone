@@ -1,6 +1,6 @@
 <template>
-  <div class="collection" style="overflow-y:auto">
-      <h2> 
+  <div class="collection" >
+      <div >
         <ul>  
             <li class="collectionBubble collectionBubble-bottom-left"
             v-for="Collection in Collections" :key="Collection.collectionId">
@@ -11,8 +11,8 @@
             <router-link :to="{name: 'CollectionStats', params: {collectionId:Collection.collectionId}}" tag="button">See Collection Details</router-link>
             </li>
         </ul>
-      </h2>
-  </div>
+        </div>
+      </div>
 </template>
 
 <script>
