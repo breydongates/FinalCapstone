@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="statsBox">
     <p>
         Total Number Of Comics: {{totalNumberOfComics}}
     </p>

@@ -1,7 +1,7 @@
 <template>
   <div class="yourCollections">
       <h1> Your Collections </h1>
-      <div style="overflow-y:auto">
+      <div class="collection">
       <view-collection />
       </div>
   </div>

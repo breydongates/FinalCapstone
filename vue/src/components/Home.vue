@@ -3,10 +3,10 @@
     <h1>Comic Book Database</h1>
     <!-- CHANGE ME -->
     <router-link :to="{ name: 'CreateCollection' }">
-      Create Collection
+     Create Collection
     </router-link>
     <router-link :to="{ name: 'Collection' }">
-      View Your Collections
+      &nbsp;|&nbsp;View Your Collections
     </router-link>
   </div>
 </template>
