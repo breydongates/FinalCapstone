@@ -16,7 +16,9 @@ namespace Capstone.DAO
 
         private string SQLAddComicToCollections = "INSERT INTO collections (collection_id, user_id, comic_id) VALUES (@collection_id, @user_id, @comic_id);";
 
-        private string SQLGetComicsByCollectionId = "SELECT * FROM comics JOIN collections ON comics.comic_id = collections.comic_id WHERE collection_id = @collection_id;";
+        private string SQLGetComicsByCollectionId = "SELECT collections.collection_id, comics.title, comics.comic_desc, comics.publisher, comics.edition, comics.comic_id, characters.character_name FROM comics JOIN collections ON comics.comic_id = collections.comic_id " +
+            "JOIN comic_character ON comics.comic_id = comic_character.comic_id " +
+            "JOIN characters ON comic_character.character_id = characters.character_id WHERE collection_id = @collection_id;";
 
         private string SQLAddMainCharacter = "INSERT INTO characters (character_name) OUTPUT INSERTED.character_id VALUES (@maincharacter);";
 
@@ -95,6 +97,8 @@ namespace Capstone.DAO
                     comic.Publisher = Convert.ToString(reader["publisher"]);
                     comic.CollectionId = Convert.ToInt32(reader["collection_id"]);
                     comic.ComicId = Convert.ToInt32(reader["comic_id"]);
+                    comic.MainCharacter = Convert.ToString(reader["character_name"]);
+                    comic.Edition = Convert.ToInt32(reader["edition"]);
 
                     comicsInCollection.Add(comic);
 
