@@ -1,8 +1,7 @@
 <template>
-  <div >
-      <h1>Public Collections</h1>
+  <div style="overflow-y:auto; height:100%;">
       
-        <ul class="collectionList" style="overflow-y:auto">  
+        <ul class="collectionList" >  
             <li class="collectionBubble" v-for="Collection in Collections" :key="Collection.collectionId"> 
                 <router-link :to="{name: 'Comics', params: {collectionId:Collection.collectionId}}">{{Collection.collectionName}}</router-link>
             </li>

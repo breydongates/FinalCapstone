@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent="saveCollection()">
-    <div>
-      <label for="collectionName"> Collection Name </label>
+    <div class="collectionBubble">
+      <label for="collectionName"> Collection Name  </label>
       <input
         type="text"
         id="collectionName"

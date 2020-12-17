@@ -1,12 +1,14 @@
 <template>
 
-      <div >
+      <div class="yourCollections" style="overflow:hidden">
+          <h1>Public Collections</h1>
+
           <view-public-collections></view-public-collections>
           <all-public-comic-stats>
               
           </all-public-comic-stats>
       </div>
- 
+
 </template>
 
 <script>

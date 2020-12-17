@@ -1,7 +1,7 @@
 <template>
-  <div> 
+  <div class="yourCollections" style="overflow:hidden"> 
       <h1>  
-          Your Comics
+          Comics In This Collection
       </h1>
       <view-comic />
   </div>

@@ -1,10 +1,10 @@
 <template>
 
-  <div id="comicView"> 
+  <div class="yourCollections"> 
     <h1>Add Comics to Collection</h1>
-      <section id="addComicButton">
+      
         <create-comic v-bind:collectionId="collectionId"/>
-      </section>
+      
   </div>
 </template>
 
@@ -27,6 +27,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.collectionBubble{
+  margin-top:-18px;
+}
 </style>

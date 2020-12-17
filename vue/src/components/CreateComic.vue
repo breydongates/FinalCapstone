@@ -1,40 +1,49 @@
 <template>
+<div class="collectionBubble">
   <form v-on:submit.prevent="saveComic()">
     <h1>Add Comic</h1>
-    <div>
-      <label for="title"> Title </label>
+    <div class="saveComicInput">
+      <label for="title" > Title 
       <input type="text" id="title" name="Title" v-model="comic.title" />
+      </label>
       <br />
-      <label for="description"> Description </label>
+      <label for="description"> Description 
       <input
         type="text"
         id="description"
         name="Description"
         v-model="comic.description"
       />
-      <label for="publisher"> Publisher </label>
+      </label>
+      <br />
+      <label for="publisher"> Publisher 
       <input
         type="text"
         id="publisher"
         name="Publisher"
         v-model="comic.publisher"
       />
-      <label for="edition"> Edition Number </label>
-      <input type="text" id="edition" name="Edition" v-model="comic.edition" />
+      </label>
+      <br />
+      <label for="edition"> Edition Number
+      <input type="number" id="edition" name="Edition" v-model="comic.edition" /> </label>
       <!--Add input for characters, require at least 1 character entry-->
-
-      <label for="mainCharacter"> Main Character </label>
+  <br />
+      <label for="mainCharacter"> Main Character 
       <input
         type="text"
         id="mainCharacter"
         name="mainCharacter"
         v-model="comic.mainCharacter"
       />
+      </label>
+      <br />
       <div class="actions">
         <button type="submit">Save Comic</button>
       </div>
     </div>
   </form>
+</div>
 </template>
 
 <script>
@@ -80,6 +89,7 @@ export default {
             this.comic.publisher = "";
             this.comic.edition = "";
             this.comic.mainCharacter = "";
+            this.$router.push({name: "CollectionStats", params: {collectionId: this.comic.collectionId}});
           }
         });
       }else 
@@ -97,4 +107,13 @@ export default {
 </script>
 
 <style>
+.saveComicInput > label{
+ width:500px;
+ clear: both;
+}
+.saveComicInput > label > input{
+  width: 100%;
+  clear:both;
+}
+
 </style>

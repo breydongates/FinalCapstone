@@ -1,13 +1,15 @@
 <template>
-<div class="viewComic">
+<div>
     
-        <ul>
-               <comic-card 
+        <ul style="overflow-y:auto">
+            
+               <comic-card
                v-for="c in Comics"
                v-bind:key="c.ComicId"
                v-bind:Comic="c"> 
 
                </comic-card>
+               
         </ul>
    
 </div>
@@ -70,6 +72,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.comicBubble{
+    padding-right: 2em;
+}
 </style>
