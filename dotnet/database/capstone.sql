@@ -65,8 +65,8 @@ CREATE TABLE characters (
 --populate default data: 'password'
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user');
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
-INSERT INTO users (username, password_hash, salt, user_role) VALUES ('userP', 'Ec+TLVhEZTWDGYPziZUZkiuQp6U=', 'q501sO1EB6s=','Premium');
-INSERT INTO users (username, password_hash, salt, user_role) VALUES ('userS', 'mvlintodiEsK04IVv40c9yiBn5U=', 'WRZdZVCw+9Q=', 'Standard');
+INSERT INTO users (username, password_hash, salt, user_role) VALUES ('Premium', 'Ec+TLVhEZTWDGYPziZUZkiuQp6U=', 'q501sO1EB6s=','Premium');
+INSERT INTO users (username, password_hash, salt, user_role) VALUES ('Standard', 'mvlintodiEsK04IVv40c9yiBn5U=', 'WRZdZVCw+9Q=', 'Standard');
 
 
 ALTER TABLE collections 
