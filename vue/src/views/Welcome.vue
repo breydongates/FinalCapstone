@@ -1,7 +1,7 @@
 <template>
   <div class="yourCollections">
     <div class="collectionBubble">
-     <p> WELCOME, to the Comic Book Database! </p>
+     <p style="font-size:50px;"> WELCOME, to the Comic Book Database! </p>
      <p> <button class="publicCollectionsLink"><router-link :to="{name: 'PublicCollections'}">View All Public Collections</router-link></button>
      </p>
     </div>
@@ -16,6 +16,6 @@ export default {
 
 <style scoped>
 .yourCollections{
-  padding-top:20em;
+  padding-top:9em;
 }
 </style>

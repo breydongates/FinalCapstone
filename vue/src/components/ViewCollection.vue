@@ -3,7 +3,7 @@
       <div class="yourCollections"  style="overflow:hidden;">
             <h1> Your Collections </h1>
         <ul style="overflow-y:scroll; margin:0; height:100%;">  
-            <li class="collectionBubble"
+            <li class="collectionBubble" style="font-size:20px;"
             v-for="Collection in Collections" :key="Collection.collectionId">
             {{Collection.collectionName}} 
             <br>
@@ -48,8 +48,8 @@ created() {
 
 <style scoped>
 .collectionBubble{
-    padding-left:20em;
-    padding-right:20em;
+    padding-left:15em;
+    padding-right:15em;
 }
 .yourCollections{
     padding-bottom: 3em;

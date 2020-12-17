@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent="saveCollection()">
     <div class="collectionBubble">
-      <label for="collectionName"> Collection Name  </label>
+      <label for="collectionName" style="font-size:35px;"> Collection Name  </label>
       <input
         type="text"
         id="collectionName"
@@ -16,15 +16,16 @@
         value= 0
         v-model="collection.IsPrivate"
       />
-      <label for="public"> Public </label>
+      <label for="public" style="font-size:30px; margin-left:5px;"> Public </label>
+      <br />
       <input
         type="radio"
         id="private"
         name="isPrivate"
         value= 1
         v-model="collection.IsPrivate"
-      />
-      <label for="private"> Private </label> <br />
+      /> 
+      <label for="private" style="font-size:30px; margin-left:5px;"> Private </label> <br />
 
       <div class="actions">
         <button type="submit">Save Collection</button>
@@ -76,12 +77,8 @@ export default {
 };
 </script>
 
-<style>
-#public {
-  padding: 1rem;
-}
-#private {
-  padding: 1rem;
-}
+<style scoped>
+
+
 
 </style>
