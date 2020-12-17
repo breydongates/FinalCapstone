@@ -105,7 +105,7 @@ const router = new Router({
       name: "CollectionStats",
       component: CollectionStats,
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
       },
     },
     
