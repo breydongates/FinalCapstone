@@ -1,8 +1,10 @@
 <template>
-  <div id="app">
+  <div class="yourCollections">
+    <div class="collectionBubble">
      <p> WELCOME, to the Comic Book Database! </p>
      <p> <button class="publicCollectionsLink"><router-link :to="{name: 'PublicCollections'}">View All Public Collections</router-link></button>
-      <button class="publicComicsLink"><router-link :to="{name: 'Comics'}">View All Public Comics</router-link></button> </p>
+     </p>
+    </div>
   </div>
 </template>
 
@@ -12,6 +14,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.yourCollections{
+  padding-top:20em;
+}
 </style>

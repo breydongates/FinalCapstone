@@ -129,7 +129,7 @@ h1 {
 }
 .comicCardBubble {
   position: relative;
-  font-family: sans-serif;
+  font-family: 'Comic Sans', cursive;
   font-size: 18px;
   line-height: 24px;
   width: 300px;
@@ -139,9 +139,10 @@ h1 {
   text-align: center;
   color: #000;
   padding: 10px;
-  margin-bottom: 10%;
-  margin-top: 10%;
+  margin-bottom: 5rem;
+  margin-top: 7rem;
   border: 2px solid black;
+  padding-inline-start: 65px;
 };
 
 .comicCardBubble-bottom-left:before {
@@ -158,51 +159,26 @@ h1 {
   
 }
 
-#comicView{
-  border-radius: 12px;
-  background-image: radial-gradient(circle, lightcoral, tomato);
-  display: flex;
-  flex-wrap: wrap;
-  font-family: 'Comic Sans', cursive;
-  justify-content: left;
-  align-content: left;
-  position:absolute;
-  top: 15rem;
-  left: 15rem;
-  bottom: 5rem;
-  right: 5rem;
-  text-align: center;
-  border: 10px solid white;
-  box-shadow: 0 6px 6px -6px #000;
-  color: black;
-  padding: 10%;
-  margin: 5%;
-};
-#comicView > h1{
-    background-color:#fff;
-  border-left:solid 2px #000;
-  border-bottom:solid 2px #000;
-  margin:0;
-  padding:3px 10px;
-  right:-1%;
-  position:absolute;
-  top:-1%;
-  transform:skew(-15deg);
-}; 
 
 
 
 #addComicButton{
+  font-family: 'Comic Sans', cursive;
     background-color:#fff;
-  border:solid 2px #000;
+  border-top:solid 2px #000;
+  border-right:solid 2px #000;
   margin:0;
-  padding:3px 10px;
+  padding:8px 10px;
+  padding-left:40px;
    bottom:-2px;
   position:absolute;
-  left:-5px;
+  left:-27px;
   transform:skew(-15deg);
 };
 .yourCollections{
+
+  height: 60%;
+  width:70%;
     border-radius: 12px;
   background-image: radial-gradient(circle, lightcoral, tomato);
   display: inline;
@@ -216,34 +192,40 @@ h1 {
   bottom: 5rem;
   right: 5rem;
   text-align: center;
-  border: 10px solid white;
+  border: 15px solid white;
   box-shadow: 0 6px 6px -6px #000;
   color: black;
-  padding: 10%;
-  margin: 5%;
+  
 };
 .yourCollections > h1 {
     background-color:#fff;
-  border-left:solid 2px #000;
+  border-right:solid 2px #000;
   border-bottom:solid 2px #000;
   margin:0;
   padding:3px 10px;
-  left:-1%;
+  left:-.7%;
   position:absolute;
   top:-1%;
   transform:skew(-15deg);
 };
+.yourCollections > ul {
+  float:right; 
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 
 .collectionBubble {
 background-color:#fff;
   border:solid 2px #000;
   border-radius:12px;
- 
-  margin:.5em;
+  margin-bottom: 3%;
+  margin:1.5em;
   padding:.5em 1em;
+  padding-left:4em;
+  padding-right:4em;
   position: relative;
   padding-bottom: 2%;
-  
 };
 
 .collectionBubble:before {
@@ -270,6 +252,42 @@ background-color:#fff;
   transform:skew(-15deg);
   width:0;
 }
+.collectionBubbleAddComic {
+background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+ 
+  margin:.5em;
+  padding:.5em 1em;
+  position: center;
+  padding-bottom: 2%;
+  
+};
+
+.collectionBubbleAddComic:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+};
+.collectionBubbleAddComic::after{
+   border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
 
 .collectionList{
   height: 85%;
@@ -279,17 +297,22 @@ background-color:#fff;
   padding-bottom: 10%;
 }
 .statsBox{
+  font-family: 'Comic Sans', cursive;
      background-color:#fff;
-  border:solid 2px #000;
+  border-top:solid 2px #000;
+  border-right:solid 2px #000;
   margin:0;
   padding:.1% 1%;
    bottom:-2px;
   position: absolute;
-  left:-.5%;
+  left:-27px;
+  padding-left:40px;
   transform:skew(-15deg);
 }
 li{
   list-style-type: none;
 }
+
+
 
 </style>

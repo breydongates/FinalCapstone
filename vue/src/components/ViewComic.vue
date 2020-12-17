@@ -1,13 +1,16 @@
 <template>
-<div class="viewComic">
+<div>
     
-        <ul>
+        <ul style="overflow-y:auto">
+            
                <comic-card 
+               class="collectionBubble"
                v-for="c in Comics"
                v-bind:key="c.ComicId"
                v-bind:Comic="c"> 
 
                </comic-card>
+               
         </ul>
    
 </div>

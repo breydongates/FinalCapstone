@@ -3,9 +3,9 @@
     <div class="comicCardBubble comicCardBubble-bottom-left">  
         <ul>
 
-            Title: <b> {{Comic.title}} </b>
-            Publisher: <b> {{Comic.publisher}} </b>          
-           Description: <b> {{Comic.description}} </b>
+            Title: <b> {{Comic.title}} </b> <br />
+            Publisher: <b> {{Comic.publisher}} </b> <br />       
+           Description: <b> {{Comic.description}} </b> <br />
            <!--Main Character: <b> {{Comic.mainCharacter}} </b>-->
         </ul> 
 
