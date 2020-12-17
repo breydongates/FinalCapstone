@@ -16,7 +16,7 @@ namespace Capstone.Models
 
         public string MainCharacter { get; set; }
 
-        public int Edition { get; set; }
+        public string Edition { get; set; }
 
         public string Description { get; set; }
 

@@ -98,7 +98,7 @@ namespace Capstone.DAO
                     comic.CollectionId = Convert.ToInt32(reader["collection_id"]);
                     comic.ComicId = Convert.ToInt32(reader["comic_id"]);
                     comic.MainCharacter = Convert.ToString(reader["character_name"]);
-                    comic.Edition = Convert.ToInt32(reader["edition"]);
+                    comic.Edition = Convert.ToString(reader["edition"]);
 
                     comicsInCollection.Add(comic);
 
