@@ -2,10 +2,10 @@
 
   <div class="yourCollections" style="overflow:hidden"> 
     <h1> Your Comics </h1>
-  
+  <ul style="overflow-y:scroll; margin:0; height:100%;">
         <view-comic v-bind:collectionId="collectionId">
     </view-comic>
-    
+   </ul> 
     <section id="addComicButton">
         <collection-statistics v-bind:collectionId="collectionId"/>
     </section>

@@ -3,8 +3,7 @@
     
         <ul style="overflow-y:auto">
             
-               <comic-card 
-               class="collectionBubble"
+               <comic-card
                v-for="c in Comics"
                v-bind:key="c.ComicId"
                v-bind:Comic="c"> 
@@ -73,6 +72,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.comicBubble{
+    padding-right: 2em;
+}
 </style>

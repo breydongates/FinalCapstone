@@ -22,7 +22,7 @@ export default {
 
 <style>
 .inner{
-  margin-top:15%;
+  margin-top:10%;
 }
 
 

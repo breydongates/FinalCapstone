@@ -1,11 +1,11 @@
 <template>
 
-    <div class="comicCardBubble comicCardBubble-bottom-left">  
+    <div class="collectionBubble">  
         <ul>
 
             Title: <b> {{Comic.title}} </b> <br />
             Publisher: <b> {{Comic.publisher}} </b> <br />       
-           Description: <b> {{Comic.description}} </b> <br />
+           Description: <b> {{Comic.description}} </b>
            <!--Main Character: <b> {{Comic.mainCharacter}} </b>-->
         </ul> 
 

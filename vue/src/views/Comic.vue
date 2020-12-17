@@ -1,5 +1,5 @@
 <template>
-  <div class="yourCollections"> 
+  <div class="yourCollections" style="overflow:hidden"> 
       <h1>  
           Comics In This Collection
       </h1>

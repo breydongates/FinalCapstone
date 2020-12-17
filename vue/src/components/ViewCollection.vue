@@ -51,5 +51,9 @@ created() {
     padding-left:20em;
     padding-right:20em;
 }
+.yourCollections{
+    padding-bottom: 3em;
+    padding-top:1em;
+}
 
 </style>

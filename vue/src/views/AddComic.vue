@@ -29,6 +29,6 @@ export default {
 
 <style scoped>
 .collectionBubble{
-  margin-top:66px;
+  margin-top:-18px;
 }
 </style>
