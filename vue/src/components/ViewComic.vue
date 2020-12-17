@@ -3,7 +3,8 @@
     
         <ul style="overflow-y:auto">
             
-               <comic-card
+               <comic-card 
+               
                v-for="c in Comics"
                v-bind:key="c.ComicId"
                v-bind:Comic="c"> 
